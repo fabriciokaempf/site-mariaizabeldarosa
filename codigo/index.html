@@ -81,6 +81,13 @@ fbq('track', 'PageView');
     color: var(--branco); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   }
   .topbar .marca span { color: var(--amarelo); font-style: italic; }
+  @media (max-width: 430px) {
+    .topbar { padding: 9px 14px; gap: 8px; }
+    .topbar .marca { font-size: 0.82rem; }
+  }
+  @media (max-width: 360px) {
+    .topbar .marca { font-size: 0.74rem; }
+  }
   .topbar a.mini {
     background: var(--amarelo); color: var(--azul); text-decoration: none; font-weight: 700;
     font-size: 0.78rem; padding: 8px 18px; border-radius: 30px; white-space: nowrap; flex: none;
@@ -88,6 +95,7 @@ fbq('track', 'PageView');
 
   /* BLOCO 1 · PROMESSA (capa de autoridade pontual) */
   .hero {
+    position: relative;
     background:
       radial-gradient(ellipse 90% 70% at 50% -10%, rgba(79,124,138,0.5), transparent 60%),
       linear-gradient(170deg, #16202D 0%, var(--azul) 55%, var(--azul-m) 100%);
