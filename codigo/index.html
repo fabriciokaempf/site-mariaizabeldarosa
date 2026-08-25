@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-563NLH3P');</script>
+<!-- End Google Tag Manager -->
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Código para Destravar o Desenvolvimento Infantil · Maria Izabel da Rosa</title>
@@ -12,17 +20,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
-<!-- TODO: Meta Pixel · inserir o ID do gerenciador do projeto e descomentar
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', 'PIXEL_ID_AQUI');
-fbq('track', 'PageView');
-</script>
--->
+<!-- Meta Pixel: NAO instalar aqui. Com o GTM no ar (GTM-563NLH3P), o Pixel entra
+     como tag dentro do GTM, com acionador no evento personalizado "clique_checkout".
+     Instalar nos dois lugares causaria contagem dobrada. -->
 <style>
   :root {
     --azul: #1E2A3A;
@@ -419,6 +419,11 @@ fbq('track', 'PageView');
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-563NLH3P"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 
 <div class="topbar">
   <div class="marca">Código para Destravar o <span>Desenvolvimento Infantil</span></div>
@@ -836,6 +841,8 @@ fbq('track', 'PageView');
     iframe.allowFullscreen = true;
     vslBox.innerHTML = '';
     vslBox.appendChild(iframe);
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'play_vsl', video: 'vsl_codigo' });
   }, { once: true });
 
   const sticky = document.getElementById('stickyCta');
@@ -854,10 +861,46 @@ fbq('track', 'PageView');
   }
   document.querySelectorAll('a[href*="pay.hotmart.com"]').forEach(a => { a.href = adicionaUtm(a.href); });
 
+  // Eventos para o Google Tag Manager (container GTM-563NLH3P).
+  // No GTM, criar acionadores de "Evento personalizado" com estes nomes.
+  window.dataLayer = window.dataLayer || [];
+
   document.addEventListener('click', (ev) => {
     const alvo = ev.target.closest('a[href*="pay.hotmart.com"]');
-    if (alvo && typeof fbq === 'function') { fbq('track', 'InitiateCheckout'); }
+    if (!alvo) return;
+    const origem = (alvo.href.match(/[?&]src=([^&]+)/) || [])[1] || 'nao_identificado';
+    window.dataLayer.push({
+      event: 'clique_checkout',
+      botao_origem: origem,
+      produto: 'codigo_desenvolvimento_infantil',
+      valor: 697,
+      moeda: 'BRL'
+    });
+    if (typeof fbq === 'function') { fbq('track', 'InitiateCheckout'); }
   });
+
+  // Profundidade de leitura: dispara uma vez em cada marca.
+  (function () {
+    const marcas = [25, 50, 75, 90];
+    const vistos = new Set();
+    let ultima = 0;
+    function medir() {
+      const agora = Date.now();
+      if (agora - ultima < 200) return;
+      ultima = agora;
+      const alt = document.documentElement.scrollHeight - window.innerHeight;
+      if (alt <= 0) return;
+      const pct = (window.scrollY / alt) * 100;
+      marcas.forEach(m => {
+        if (pct >= m && !vistos.has(m)) {
+          vistos.add(m);
+          window.dataLayer.push({ event: 'leitura_pagina', profundidade: m });
+        }
+      });
+    }
+    window.addEventListener('scroll', medir, { passive: true });
+    window.addEventListener('pagehide', medir);
+  })();
 </script>
 
 </body>
