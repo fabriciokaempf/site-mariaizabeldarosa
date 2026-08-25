@@ -240,9 +240,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   /* MÓDULOS */
   .modulo {
     background: #fff; border: 1px solid var(--areia); border-radius: 16px;
-    padding: 26px 30px; margin-bottom: 14px;
+    padding: 22px 26px; margin-bottom: 12px;
     box-shadow: 0 4px 16px rgba(30,42,58,0.05);
+    transition: box-shadow 0.2s ease;
   }
+  details.modulo[open] { box-shadow: 0 10px 26px rgba(30,42,58,0.09); }
+  details.modulo > summary {
+    display: block; cursor: pointer; list-style: none;
+    position: relative; padding-right: 44px;
+  }
+  details.modulo > summary::-webkit-details-marker { display: none; }
+  details.modulo > summary::after {
+    content: '+'; position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+    width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 29px;
+    background: var(--areia-s); color: var(--amarelo-e); font-size: 1.2rem; font-weight: 700;
+  }
+  details.modulo[open] > summary::after { content: '2'; }
+  details.modulo > summary h3 { margin-bottom: 2px; }
+  details.modulo > summary .desc { margin-bottom: 0; }
+  details.modulo > ul { margin-top: 16px; padding-top: 4px; border-top: 1px solid var(--areia); }
   .modulo .mtag {
     font-size: 0.62rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
     color: var(--azul-c); background: #EAF0F1; border-radius: 30px; padding: 5px 13px; display: inline-block;
@@ -561,60 +577,70 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2>5 módulos de aulas objetivas, <em>nenhuma enrolação</em></h2>
     <p>Aulas diretas, pensadas para caber na rotina real de quem cuida de criança: você assiste, entende e aplica no mesmo dia. E antes de tudo, um bloco de boas-vindas te mostra como estudar, onde buscar suporte e como funciona o método e a Mandala.</p>
 
-    <div class="modulo">
-      <span class="mtag">Módulo 1</span>
-      <h3>Presença e Desenvolvimento Integral</h3>
-      <p class="desc">Onde o destravamento começa</p>
+    <details class="modulo" open>
+      <summary>
+        <span class="mtag">Módulo 1</span>
+        <h3>Presença e Desenvolvimento Integral</h3>
+        <p class="desc">Onde o destravamento começa</p>
+      </summary>
       <ul>
         <li>O que é desenvolvimento infantil integral, por que ele começa dentro da sua casa, e o papel real da mãe nele (sem peso e sem culpa)</li>
         <li>Como sair do piloto automático e maternar com presença: o Ritual de Presença Consciente, os minutos que valem mais que uma hora de corpo presente</li>
         <li>Tempo de Chão, Escuta Ativa e os micro rituais de conexão que cabem em qualquer rotina</li>
         <li>Redução de telas com consciência: por que o celular não entra, como usar a TV com regras claras e como dar suporte emocional nos primeiros dias da transição</li>
       </ul>
-    </div>
-    <div class="modulo">
-      <span class="mtag">Módulo 2</span>
-      <h3>Ambiente que Acolhe e Estimula</h3>
-      <p class="desc">A casa como território de desenvolvimento</p>
+    </details>
+    <details class="modulo">
+      <summary>
+        <span class="mtag">Módulo 2</span>
+        <h3>Ambiente que Acolhe e Estimula</h3>
+        <p class="desc">A casa como território de desenvolvimento</p>
+      </summary>
       <ul>
         <li>Como transformar a casa que você já tem num ambiente que estimula e organiza o comportamento (menos estímulos, mais intenção)</li>
         <li>Rotina com ritmo e flexibilidade: a previsibilidade que acalma o cérebro infantil sem prender a família num horário rígido</li>
         <li>Brincar é aprender: o estímulo certo na hora certa, fase a fase (0 a 1, 1 a 3 e 3 a 6 anos)</li>
         <li>O cantinho de estímulo e conexão montado com o que você já tem em casa, com rodízio semanal e poucos brinquedos visíveis</li>
       </ul>
-    </div>
-    <div class="modulo">
-      <span class="mtag">Módulo 3</span>
-      <h3>Corpo, Cérebro e Emoções em Ação</h3>
-      <p class="desc">A integração que faz o desenvolvimento fluir</p>
+    </details>
+    <details class="modulo">
+      <summary>
+        <span class="mtag">Módulo 3</span>
+        <h3>Corpo, Cérebro e Emoções em Ação</h3>
+        <p class="desc">A integração que faz o desenvolvimento fluir</p>
+      </summary>
       <ul>
         <li>A integração corpo-cérebro-coração e como ela aparece (ou trava) no brincar, em cada fase</li>
         <li>Atividades práticas para estimular linguagem, vínculo e criatividade com objetos simples</li>
         <li>Os Mapas de Desenvolvimento: os 5 campos que você aprende a observar para acompanhar seu filho com clareza, sem ansiedade e sem comparação</li>
         <li>Como lidar com birras, e a leitura do brincar como janela para entender o que está acontecendo por dentro</li>
       </ul>
-    </div>
-    <div class="modulo">
-      <span class="mtag">Módulo 4</span>
-      <h3>O Campo Emocional da Família</h3>
-      <p class="desc">O que a criança sente antes de você dizer</p>
+    </details>
+    <details class="modulo">
+      <summary>
+        <span class="mtag">Módulo 4</span>
+        <h3>O Campo Emocional da Família</h3>
+        <p class="desc">O que a criança sente antes de você dizer</p>
+      </summary>
       <ul>
         <li>Como o clima emocional da casa afeta diretamente o comportamento da criança</li>
         <li>Curando os padrões invisíveis da sua própria infância, para não os repetir na dele</li>
         <li>Diálogo consciente: como conversar com seu filho de um jeito que constrói em vez de travar</li>
         <li>Como cuidar das suas emoções, estabelecer limites e proteger a sua energia sem culpa</li>
       </ul>
-    </div>
-    <div class="modulo">
-      <span class="mtag">Módulo 5</span>
-      <h3>Vivendo com Propósito</h3>
-      <p class="desc">O método que cresce junto com o seu filho</p>
+    </details>
+    <details class="modulo">
+      <summary>
+        <span class="mtag">Módulo 5</span>
+        <h3>Vivendo com Propósito</h3>
+        <p class="desc">O método que cresce junto com o seu filho</p>
+      </summary>
       <ul>
         <li>Como adaptar o método ao crescimento da criança e às novas fases que vão chegando</li>
         <li>Autoavaliação e reflexão: como reconhecer os seus avanços (porque eles vão acontecer)</li>
         <li>Cuidando de você para cuidar melhor: o autocuidado que sustenta tudo o que você construiu</li>
       </ul>
-    </div>
+    </details>
 
     <p style="margin-top:26px;">E dentro das aulas, você ainda descobre...</p>
     <ul class="fasc">
@@ -638,13 +664,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="bio-foto"><img src="foto-bel.jpeg" alt="Maria Izabel da Rosa, terapeuta da infância e família"></div>
       <div>
         <p><span class="destaque">Eu sou Maria Izabel da Rosa, e há mais de 10 anos a infância é o centro do meu trabalho.</span></p>
-        <p>Minha trajetória começou na psicopedagogia, olhando para a aprendizagem e para o desenvolvimento. Mas a prática clínica foi me mostrando, caso após caso, que <span class="destaque">uma criança nunca pode ser compreendida apenas pelo comportamento que apresenta.</span></p>
-        <p>Por trás de uma birra, de uma dificuldade, de uma criança que não consegue parar, esperar, dormir, brincar ou realizar algo sozinha, existe muito mais para ser observado. Existe um cérebro em desenvolvimento. Existe uma história. Existe vínculo. Existe uma família. Existe um ambiente. Existe uma criança tentando se desenvolver com os recursos que tem naquele momento.</p>
-        <p>Foi essa compreensão que ampliou profundamente o meu trabalho. Ao longo desses anos, fui integrando diferentes conhecimentos sobre <span class="destaque">desenvolvimento infantil, neurociência, aprendizagem, vínculo, comportamento e relações familiares</span> para construir um olhar mais inteiro sobre a infância.</p>
-        <p>E a maternidade também transformou a profissional que eu sou. Porque uma coisa é estudar desenvolvimento. Outra é estar dentro de uma casa, cansada, diante de uma criança chorando, e precisar decidir: <span class="destaque">"o que meu filho precisa de mim agora?"</span></p>
-        <p>Foi da união entre estudo, prática clínica e vida real que nasceu o Código. Eu não o criei para ensinar mães a controlar o comportamento dos filhos. Criei para ensinar algo que considero muito mais importante: <span class="destaque">compreender a criança e a infância para conduzi-la com mais consciência e segurança.</span></p>
-        <p>No Código, eu traduzo conhecimentos que muitas vezes parecem complexos para que você consiga levá-los para situações comuns da sua casa: a birra, o limite, o brincar, a rotina, a autonomia, as emoções, o excesso de telas, o vínculo e os desafios de cada fase. Porque meu trabalho não é entregar uma nova lista de regras sobre como criar seu filho. É ajudar você a desenvolver um olhar. Um olhar que permita sair do <em>"por que ele está fazendo isso?"</em> para o <span class="destaque">"agora eu consigo compreender melhor o que está acontecendo, e sei como conduzir."</span></p>
-        <p>Essa, para mim, é a grande transformação do Código.</p>
+        <p>Comecei na psicopedagogia, olhando para a aprendizagem. Mas a prática clínica foi me mostrando, caso após caso, que <span class="destaque">uma criança nunca pode ser compreendida apenas pelo comportamento que apresenta.</span> Por trás de uma birra existe um cérebro em desenvolvimento, uma história, um vínculo, uma família. E uma criança tentando se desenvolver com os recursos que tem naquele momento.</p>
+        <p>E a maternidade transformou a profissional que eu sou. Porque uma coisa é estudar desenvolvimento. Outra é estar dentro de uma casa, cansada, diante de uma criança chorando, e precisar decidir: <span class="destaque">"o que meu filho precisa de mim agora?"</span></p>
+        <p>Foi da união entre estudo, prática clínica e vida real que nasceu o Código. Eu não o criei para ensinar mães a controlar o comportamento dos filhos. Criei para ajudar você a desenvolver um olhar: sair do <em>"por que ele está fazendo isso?"</em> para o <span class="destaque">"agora eu entendo o que está acontecendo, e sei como conduzir."</span></p>
       </div>
     </div>
     <div class="citacao">Quando a infância é vivida com presença, o futuro é construído com segurança.<span>Maria Izabel da Rosa · @mariaizabel.psico</span></div>
