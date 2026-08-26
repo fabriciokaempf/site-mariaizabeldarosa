@@ -905,6 +905,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
   }
 
+  // cc_load_policy sozinho nao vence a preferencia de legenda da conta do
+  // espectador. Como a VSL ja tem legenda queimada pela edicao, apareceriam
+  // duas legendas sobrepostas. unloadModule derruba o modulo de legenda do
+  // proprio player. Repete algumas vezes porque o modulo carrega assincrono.
+  function desligaLegenda(player) {
+    [0, 700, 1800, 4000].forEach(atraso => setTimeout(() => {
+      try { player.unloadModule('captions'); } catch (e) {}
+      try { player.unloadModule('cc'); } catch (e) {}
+    }, atraso));
+  }
+
   vslBox.addEventListener('click', () => {
     if (ctaHero) ctaHero.classList.add('cta-oculto');
     vslBox.innerHTML = '<div id="vslPlayer"></div>';
@@ -930,9 +941,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         // legenda ligada por padrao na conta veria duas na tela ao mesmo tempo.
         playerVars: { autoplay: 1, rel: 0, playsinline: 1, cc_load_policy: 0, origin: window.location.origin },
         events: {
-          onReady: (ev) => { ev.target.playVideo(); },
+          onReady: (ev) => { ev.target.playVideo(); desligaLegenda(ev.target); },
           onStateChange: (ev) => {
-            if (ev.data !== YT.PlayerState.PLAYING || relogio) return;
+            if (ev.data !== YT.PlayerState.PLAYING) return;
+            desligaLegenda(ev.target);
+            if (relogio) return;
             relogio = setInterval(() => {
               const p = ev.target;
               const t = p.getCurrentTime ? p.getCurrentTime() : 0;
