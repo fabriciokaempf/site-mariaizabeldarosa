@@ -15,7 +15,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="description" content="Entenda o que está por trás do comportamento do seu filho de 0 a 6 anos e saiba como agir, sem viver entre culpa, gritos e tentativa e erro. Método de Maria Izabel da Rosa, terapeuta da infância e família.">
 <meta property="og:title" content="Código para Destravar o Desenvolvimento Infantil">
 <meta property="og:description" content="Pare de tentar adivinhar o que seu filho precisa. O método de Maria Izabel da Rosa para mães de crianças de 0 a 6 anos.">
-<meta property="og:image" content="https://img.youtube.com/vi/kcGUJs6GQHI/hqdefault.jpg">
+<meta property="og:image" content="https://img.youtube.com/vi/EK3CjscCDcI/maxresdefault.jpg">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -130,7 +130,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     box-shadow: 0 28px 70px rgba(0,0,0,0.5); background: #000; cursor: pointer;
   }
   .video-box iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-  .video-facade { position: absolute; inset: 0; background: url('https://img.youtube.com/vi/kcGUJs6GQHI/hqdefault.jpg') center/cover no-repeat; }
+  .video-facade { position: absolute; inset: 0; background: url('https://img.youtube.com/vi/EK3CjscCDcI/maxresdefault.jpg') center/cover no-repeat; }
   .video-facade::after { content: ''; position: absolute; inset: 0; background: rgba(30,42,58,0.28); }
   .video-play {
     position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); z-index: 2;
@@ -145,6 +145,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     border-left: 23px solid var(--azul); border-top: 14px solid transparent; border-bottom: 14px solid transparent;
   }
   .video-legenda { font-size: 0.82rem; color: #9db6c0; max-width: 540px; margin: 22px auto 0; }
+  /* Botao que nasce depois de CTA_SEGUNDOS de video assistido. */
+  /* O estado padrao do bloco ja e visivel. A animacao e so a entrada.
+     Nao inverter isso: se o estado visivel dependesse da animacao rodar,
+     a mae que troca de aba e volta encontraria o botao com opacidade 0,
+     porque animacao e transicao nao progridem em aba oculta. */
+  .cta-vsl { margin: 28px auto 0; }
+  .cta-vsl.visivel { animation: ctaNasce .5s ease; }
+  /* So transform. Nada de opacidade aqui: animacao congelada em aba oculta
+     deixaria o botao invisivel, e invisivel e o mesmo que inexistente. */
+  @keyframes ctaNasce { from { transform: translateY(14px); } to { transform: none; } }
+  .btn-area.cta-oculto { display: none; }
+  @media (prefers-reduced-motion: reduce) { .cta-vsl.visivel { animation: none; } }
 
   .btn {
     display: inline-block;
@@ -472,7 +484,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <p class="video-legenda">Assista com som. Nos primeiros minutos, Maria Izabel revela por que a birra do seu filho pode ser, na verdade, um pedido de conexão.</p>
-    <div class="btn-area">
+    <div class="cta-vsl" id="ctaVsl" hidden>
+      <a class="btn" data-src="vsl" href="https://pay.hotmart.com/H100415402M?src=vsl">QUERO ENTRAR NO CÓDIGO AGORA</a>
+    </div>
+    <div class="btn-area" id="ctaHero">
       <a class="btn" href="#oferta">QUERO ENTENDER MELHOR MEU FILHO</a>
       <div class="seguro">
         <span>10 anos de consultório</span>
@@ -854,17 +869,87 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
   document.querySelectorAll('.rv').forEach(el => io.observe(el));
 
+  /* ============================================================
+     VSL com cadencia de CTA
+     Para trocar o video, altere apenas VSL_ID.
+     CTA_SEGUNDOS e o momento em que o botao de compra nasce.
+     A capa (poster) vem do proprio YouTube, entao troca junto.
+     ============================================================ */
+  const VSL_ID = 'EK3CjscCDcI';
+  const CTA_SEGUNDOS = 390; // 6min30, em um video de 10min24
+
+  window.dataLayer = window.dataLayer || [];
   const vslBox = document.getElementById('vslBox');
+  const ctaHero = document.getElementById('ctaHero');
+  const ctaVsl = document.getElementById('ctaVsl');
+
+  function revelaCtaVsl() {
+    if (!ctaVsl || !ctaVsl.hidden) return;
+    ctaVsl.hidden = false;
+    ctaVsl.classList.add('visivel');
+    window.dataLayer.push({ event: 'cta_vsl_revelado', segundos: CTA_SEGUNDOS });
+  }
+
+  function carregaApiYT(pronto) {
+    if (window.YT && window.YT.Player) { pronto(); return; }
+    const anterior = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = function () {
+      if (typeof anterior === 'function') anterior();
+      pronto();
+    };
+    if (!document.getElementById('yt-api')) {
+      const s = document.createElement('script');
+      s.id = 'yt-api';
+      s.src = 'https://www.youtube.com/iframe_api';
+      document.head.appendChild(s);
+    }
+  }
+
   vslBox.addEventListener('click', () => {
-    const iframe = document.createElement('iframe');
-    iframe.src = 'https://www.youtube-nocookie.com/embed/kcGUJs6GQHI?rel=0&modestbranding=1&autoplay=1';
-    iframe.title = 'Vídeo: Como destravar o desenvolvimento do seu filho';
-    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-    iframe.allowFullscreen = true;
-    vslBox.innerHTML = '';
-    vslBox.appendChild(iframe);
-    window.dataLayer = window.dataLayer || [];
+    if (ctaHero) ctaHero.classList.add('cta-oculto');
+    vslBox.innerHTML = '<div id="vslPlayer"></div>';
     window.dataLayer.push({ event: 'play_vsl', video: 'vsl_codigo' });
+
+    // Rede de seguranca 1: se a API do YouTube nao subir em 6s, devolve o botao
+    // de ancora, para a mae nunca ficar sem caminho de compra.
+    let apiOk = false;
+    setTimeout(() => { if (!apiOk && ctaHero) ctaHero.classList.remove('cta-oculto'); }, 6000);
+    // Rede de seguranca 2: mesmo sem leitura de tempo, o botao nasce na hora certa.
+    setTimeout(revelaCtaVsl, CTA_SEGUNDOS * 1000);
+
+    carregaApiYT(() => {
+      apiOk = true;
+      const marcas = [25, 50, 75, 90];
+      const vistos = new Set();
+      let relogio = null;
+
+      new YT.Player('vslPlayer', {
+        host: 'https://www.youtube-nocookie.com',
+        videoId: VSL_ID,
+        playerVars: { autoplay: 1, rel: 0, playsinline: 1, origin: window.location.origin },
+        events: {
+          onReady: (ev) => { ev.target.playVideo(); },
+          onStateChange: (ev) => {
+            if (ev.data !== YT.PlayerState.PLAYING || relogio) return;
+            relogio = setInterval(() => {
+              const p = ev.target;
+              const t = p.getCurrentTime ? p.getCurrentTime() : 0;
+              const d = p.getDuration ? p.getDuration() : 0;
+              if (t >= CTA_SEGUNDOS) revelaCtaVsl();
+              if (d > 0) {
+                const pct = (t / d) * 100;
+                marcas.forEach(m => {
+                  if (pct >= m && !vistos.has(m)) {
+                    vistos.add(m);
+                    window.dataLayer.push({ event: 'vsl_progresso', profundidade: m });
+                  }
+                });
+              }
+            }, 1000);
+          }
+        }
+      });
+    });
   }, { once: true });
 
   const sticky = document.getElementById('stickyCta');
