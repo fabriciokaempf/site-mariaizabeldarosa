@@ -926,7 +926,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       new YT.Player('vslPlayer', {
         host: 'https://www.youtube-nocookie.com',
         videoId: VSL_ID,
-        playerVars: { autoplay: 1, rel: 0, playsinline: 1, origin: window.location.origin },
+        // cc_load_policy 0: a VSL ja tem legenda queimada. Sem isso, quem tem
+        // legenda ligada por padrao na conta veria duas na tela ao mesmo tempo.
+        playerVars: { autoplay: 1, rel: 0, playsinline: 1, cc_load_policy: 0, origin: window.location.origin },
         events: {
           onReady: (ev) => { ev.target.playVideo(); },
           onStateChange: (ev) => {
