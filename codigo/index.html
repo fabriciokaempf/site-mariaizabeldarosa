@@ -905,10 +905,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
   }
 
-  // cc_load_policy sozinho nao vence a preferencia de legenda da conta do
-  // espectador. Como a VSL ja tem legenda queimada pela edicao, apareceriam
-  // duas legendas sobrepostas. unloadModule derruba o modulo de legenda do
-  // proprio player. Repete algumas vezes porque o modulo carrega assincrono.
+  // A VSL ja tem legenda queimada pela edicao, entao a legenda do YouTube por
+  // cima dela aparece dobrada. ATENCAO: isto aqui NAO resolve sozinho.
+  // Testado no player ao vivo em 26/08/2026: com a faixa automatica ativa,
+  // unloadModule e setOption(track, {}) retornam sucesso e a legenda continua.
+  // O YouTube nao permite mais desligar legenda pelo lado de quem embute.
+  // A solucao de verdade e no Studio: subir uma faixa manual de legenda em
+  // portugues, que substitui a gerada automaticamente. Isto fica como reforco
+  // barato, porque em player antigo ainda funciona e nao custa nada.
   function desligaLegenda(player) {
     [0, 700, 1800, 4000].forEach(atraso => setTimeout(() => {
       try { player.unloadModule('captions'); } catch (e) {}
