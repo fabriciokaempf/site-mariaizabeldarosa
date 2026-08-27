@@ -364,6 +364,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-size: 0.62rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
     padding: 4px 14px; border-radius: 30px;
   }
+  /* Aviso de vendas pausadas. Ver a chave VENDAS_PAUSADAS no script. */
+  .aviso-pausa {
+    background: rgba(242,178,61,0.13); border: 1px solid rgba(242,178,61,0.55);
+    border-radius: 14px; padding: 22px 20px; margin: 26px auto; max-width: 470px; text-align: center;
+  }
+  .aviso-pausa p { margin: 0 0 0.6em; font-size: 0.92rem; line-height: 1.65; }
+  .aviso-pausa p:last-child { margin-bottom: 0; }
+  .aviso-pausa .titulo { font-weight: 700; font-size: 1rem; color: var(--amarelo); }
+  .aviso-pausa a { color: var(--amarelo); font-weight: 600; }
+  .sec-areia .aviso-pausa p, .sec-final .aviso-pausa p { color: inherit; }
+
   .preco-box {
     background:
       radial-gradient(circle at 50% 0%, rgba(242,178,61,0.16), transparent 55%),
@@ -981,7 +992,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     sticky.classList.toggle('visivel', !e.isIntersecting);
   }, { threshold: 0 }).observe(document.getElementById('hero'));
   new IntersectionObserver(([e]) => {
-    if (e.isIntersecting) { stickyLink.href = adicionaUtm('https://pay.hotmart.com/H100415402M?src=sticky'); }
+    if (e.isIntersecting && !window.VENDAS_PAUSADAS_FLAG) { stickyLink.href = adicionaUtm('https://pay.hotmart.com/H100415402M?src=sticky'); }
   }, { threshold: 0.2 }).observe(document.getElementById('oferta'));
 
   function adicionaUtm(url) {
@@ -990,6 +1001,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     return url + (url.includes('?') ? '&' : '?') + params;
   }
   document.querySelectorAll('a[href*="pay.hotmart.com"]').forEach(a => { a.href = adicionaUtm(a.href); });
+
+  /* ============================================================
+     CHAVE DE EMERGENCIA: VENDAS PAUSADAS
+     Em 27/08/2026 o checkout da Hotmart passou a responder erro 049,
+     "as vendas deste produto estao temporariamente encerradas", nos
+     quatro links da pagina. Funcionava as 11h25 do mesmo dia.
+     Enquanto nao voltar, os botoes saem do ar e um aviso ocupa o lugar:
+     botao que leva a tela de erro queima mais confianca do que botao
+     nenhum, e ainda perde a mae que ja tinha decidido comprar.
+     PARA REVERTER: trocar a linha abaixo para false. Nada mais.
+     ============================================================ */
+  const VENDAS_PAUSADAS = true;
+  window.VENDAS_PAUSADAS_FLAG = VENDAS_PAUSADAS;
+
+  if (VENDAS_PAUSADAS) {
+    const marcacao =
+      '<p class="titulo">As inscrições estão temporariamente fechadas.</p>' +
+      '<p>Estou ajustando alguns detalhes nos bastidores e reabro em breve. Se quiser ser avisada assim que abrir, me chama no Instagram.</p>' +
+      '<p><a href="https://instagram.com/mariaizabel.psico" target="_blank" rel="noopener">@mariaizabel.psico</a></p>';
+
+    document.querySelectorAll('a[href*="pay.hotmart.com"]').forEach(a => {
+      const aviso = document.createElement('div');
+      aviso.className = 'aviso-pausa';
+      aviso.innerHTML = marcacao;
+      a.replaceWith(aviso);
+    });
+
+    // o sticky sai de cena inteiro, nao adianta virar aviso numa barra fina
+    const barra = document.getElementById('stickyCta');
+    if (barra) barra.remove();
+
+    window.dataLayer.push({ event: 'vendas_pausadas', motivo: 'checkout_hotmart_erro_049' });
+  }
 
   // Eventos para o Google Tag Manager (container GTM-563NLH3P).
   // No GTM, criar acionadores de "Evento personalizado" com estes nomes.
