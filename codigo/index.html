@@ -1002,7 +1002,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       valor: 697,
       moeda: 'BRL'
     });
-    if (typeof fbq === 'function') { fbq('track', 'InitiateCheckout'); }
+    // O InitiateCheckout NAO sai daqui. A Hotmart ja dispara o dela quando o
+    // checkout carrega, e em 27/08 o teste mostrou os dois chegando na Meta com
+    // 7 segundos de diferenca, contando a mesma jornada duas vezes.
+    // O dado que so existe aqui e o botao de origem, e ele vai para a Meta como
+    // evento proprio, montado no GTM em cima do evento clique_checkout acima.
   });
 
   // Profundidade de leitura: dispara uma vez em cada marca.
