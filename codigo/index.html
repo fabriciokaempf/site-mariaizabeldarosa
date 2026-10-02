@@ -1025,9 +1025,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   if (VENDAS_PAUSADAS) {
     const marcacao =
-      '<p class="titulo">As inscrições estão temporariamente fechadas.</p>' +
-      '<p>Estou ajustando alguns detalhes nos bastidores e reabro em breve. Se quiser ser avisada assim que abrir, me chama no Instagram.</p>' +
-      '<p><a href="https://instagram.com/mariaizabel.psico" target="_blank" rel="noopener">@mariaizabel.psico</a></p>';
+      '<p class="titulo">O Código agora faz parte de algo maior.</p>' +
+      '<p>Estou preparando uma turma pequena, ao vivo, em que o Código vem junto como apoio. Quem está na comunidade fica sabendo primeiro, antes de qualquer anúncio.</p>' +
+      '<p><a href="https://chat.whatsapp.com/GlI8Zz9Zs2UImFh1EyneEd" target="_blank" rel="noopener" data-cta="espera">Entrar na comunidade</a></p>';
 
     document.querySelectorAll('a[href*="pay.hotmart.com"]').forEach(a => {
       const aviso = document.createElement('div');
@@ -1040,7 +1040,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const barra = document.getElementById('stickyCta');
     if (barra) barra.remove();
 
-    window.dataLayer.push({ event: 'vendas_pausadas', motivo: 'checkout_hotmart_erro_049' });
+    window.dataLayer.push({ event: 'vendas_pausadas', motivo: 'espera_lugar_dos_pais' });
+
+    // Clique no convite da comunidade, mesmo evento da pagina /aulas.
+    document.addEventListener('click', (ev) => {
+      const link = ev.target.closest('a[data-cta="espera"]');
+      if (link) window.dataLayer.push({ event: 'clique_comunidade', posicao: 'codigo_espera' });
+    });
   }
 
   // Eventos para o Google Tag Manager (container GTM-563NLH3P).
