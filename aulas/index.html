@@ -11,89 +11,124 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Duas aulas abertas · O Lugar dos Pais · Maria Izabel da Rosa</title>
-<meta name="description" content="Duas aulas ao vivo e gratuitas com Maria Izabel da Rosa, para pais e mães que querem compreender os filhos e ocupar com mais clareza o próprio lugar. 22 e 29 de outubro, 20h30.">
+<meta name="description" content="Duas aulas ao vivo e gratuitas para pais e mães de crianças, com Maria Izabel da Rosa, psicopedagoga com dez anos de consultório. 22 e 29 de outubro, 20h30.">
+<meta name="theme-color" content="#1E2A3A">
+<link rel="canonical" href="https://mariaizabeldarosa.com.br/aulas/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%231E2A3A'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23F2B23D'/%3E%3C/svg%3E">
 <meta property="og:title" content="Duas aulas abertas · O Lugar dos Pais">
-<meta property="og:description" content="Quando os pais ocupam o seu lugar, os filhos podem ocupar o deles. 22 e 29 de outubro, 20h30, ao vivo e gratuitas.">
-<meta property="og:image" content="https://mariaizabeldarosa.com.br/codigo/og-codigo.jpg">
+<meta property="og:description" content="Para pais e mães que sabem muita teoria e, na hora, ficam inseguros. 22 e 29 de outubro, 20h30, ao vivo e gratuitas.">
+<meta property="og:image" content="https://mariaizabeldarosa.com.br/aulas/og-aulas.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Maria Izabel da Rosa e o convite para as aulas abertas de O Lugar dos Pais, 22 e 29 de outubro.">
 <meta property="og:url" content="https://mariaizabeldarosa.com.br/aulas/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mariaizabeldarosa.com.br/aulas/og-aulas.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;500;600;700&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --azul: #1E2A3A; --azul-m: #24344A; --azul-c: #4F7C8A;
     --areia: #E9DCC7; --areia-s: #F1EADB; --branco: #F4F4F6;
     --amarelo: #F2B23D; --amarelo-e: #D99A25; --terra: #E07A5F;
-    --txt: #232A33; --txt2: #5C6670;
+    --zap: #1F9D55;
+    --txt: #232A33; --txt2: #4E5862;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { font-family: 'Montserrat', system-ui, sans-serif; background: var(--branco); color: var(--txt); line-height: 1.7; font-size: 16.5px; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-  section { padding: 64px 22px; position: relative; }
+  section { padding: 60px 22px; position: relative; }
   .wrap { max-width: 720px; margin: 0 auto; }
   h1, h2 { font-family: 'Playfair Display', Georgia, serif; line-height: 1.18; color: var(--azul); text-wrap: balance; }
-  h1 { font-size: clamp(2rem, 6vw, 2.9rem); font-weight: 600; }
+  h1 { font-size: clamp(1.85rem, 6vw, 2.8rem); font-weight: 600; }
   h2 { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 600; margin-bottom: 18px; }
   p { margin-bottom: 16px; }
-  .manuscrita { font-family: 'Caveat', cursive; font-size: 1.5rem; color: var(--azul-c); line-height: 1.3; }
+  .assinatura { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.25rem; color: var(--azul-c); line-height: 1.3; }
   .kicker { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul-c); margin-bottom: 14px; }
   .kicker::before { content: ''; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--terra); margin-right: 10px; vertical-align: middle; position: relative; top: -1px; }
 
-  .hero { background: linear-gradient(180deg, var(--areia-s), var(--branco)); padding-top: 72px; text-align: center; }
-  .hero .foto { width: 148px; height: 148px; border-radius: 50%; object-fit: cover; object-position: top; margin: 0 auto 22px; display: block; box-shadow: 0 14px 34px rgba(30,42,58,0.18); }
-  .hero .grande { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 500; color: var(--azul-m); max-width: 580px; margin: 18px auto 0; }
+  .hero { background: linear-gradient(180deg, var(--areia-s), var(--branco)); padding-top: 40px; padding-bottom: 36px; text-align: center; }
+  .hero .foto { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; object-position: top; margin: 0 auto 14px; display: block; box-shadow: 0 10px 26px rgba(30,42,58,0.18); }
+  .selo { display: inline-block; font-size: 0.78rem; font-weight: 600; color: var(--azul-m); background: #fff; border: 1px solid rgba(30,42,58,0.1); border-radius: 30px; padding: 5px 14px; margin-bottom: 16px; }
+  .seca { font-size: 0.95rem; font-weight: 700; letter-spacing: .4px; color: var(--azul); margin: 16px 0 0; }
+  .hero .grande { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 500; color: var(--azul-m); max-width: 560px; margin: 12px auto 0; }
 
-  .datas { display: grid; gap: 12px; margin: 34px 0 10px; }
-  .data { display: grid; grid-template-columns: 92px 1fr; gap: 16px; align-items: center; background: #fff; border: 1px solid rgba(30,42,58,0.08); border-radius: 12px; padding: 16px 18px; text-align: left; }
-  .data .dia { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 600; color: var(--amarelo-e); line-height: 1; }
-  .data .dia small { display: block; font-family: 'Montserrat', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--txt2); margin-top: 4px; }
-  .data b { display: block; font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--azul); }
-  .data span { font-size: 0.92rem; color: var(--txt2); }
-  .hora { font-size: 0.9rem; color: var(--txt2); margin-top: 6px; }
-
-  .btn-area { text-align: center; margin-top: 30px; }
-  .btn { display: inline-block; background: linear-gradient(180deg, #F7C25C, var(--amarelo) 60%, var(--amarelo-e)); color: var(--azul); text-decoration: none; font-weight: 700; font-size: 1rem; text-align: center; padding: 18px 38px; border-radius: 60px; letter-spacing: 0.3px; box-shadow: 0 12px 30px rgba(242,178,61,0.4), inset 0 1px 0 rgba(255,255,255,0.4); transition: transform 0.18s ease; max-width: 100%; }
-  .btn::after { content: '\00a0→'; }
+  .btn-area { text-align: center; margin-top: 24px; }
+  .btn { display: inline-block; background: linear-gradient(180deg, #F7C25C, var(--amarelo) 60%, var(--amarelo-e)); color: var(--azul); text-decoration: none; font: inherit; font-weight: 700; font-size: 1rem; text-align: center; padding: 17px 36px; border: 0; border-radius: 60px; letter-spacing: 0.3px; box-shadow: 0 12px 30px rgba(242,178,61,0.4), inset 0 1px 0 rgba(255,255,255,0.4); transition: transform 0.18s ease; max-width: 100%; cursor: pointer; }
+  .btn .seta { margin-left: 6px; }
   .btn:hover { transform: translateY(-3px); }
   .btn:focus-visible { outline: 3px solid var(--azul-c); outline-offset: 3px; }
-  .sob { font-size: 0.85rem; color: var(--txt2); margin-top: 12px; }
+  .sob { font-size: 0.85rem; color: var(--txt2); margin-top: 10px; }
+
+  .inscricao { background: var(--branco); padding-top: 8px; }
+  .datas { display: grid; gap: 10px; margin: 0 auto 22px; max-width: 520px; }
+  .data { display: grid; grid-template-columns: 76px 1fr; gap: 14px; align-items: center; background: #fff; border: 1px solid rgba(30,42,58,0.08); border-radius: 12px; padding: 14px 16px; text-align: left; }
+  .data .dia { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 600; color: var(--amarelo-e); line-height: 1; }
+  .data .dia small { display: block; font-family: 'Montserrat', sans-serif; font-size: 0.66rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--txt2); margin-top: 4px; }
+  .data b { display: block; font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--azul); line-height: 1.3; }
+  .data span { display: block; font-size: 0.88rem; color: var(--txt2); margin-top: 3px; }
+  .hora { font-size: 0.88rem; color: var(--txt2); text-align: center; margin: -8px 0 0; }
+
+  .form { display: grid; gap: 16px; text-align: left; max-width: 520px; margin: 22px auto 0; background: #fff; border: 1px solid rgba(30,42,58,0.08); border-radius: 14px; padding: 24px 20px; }
+  .form .titulo-form { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 600; color: var(--azul); margin: 0; text-align: center; }
+  .campo { display: grid; gap: 6px; }
+  .campo > label, .campo > .rotulo { font-size: 0.9rem; font-weight: 600; color: var(--azul); }
+  .form input[type=text], .form input[type=tel], .form input[type=email] { font: inherit; font-weight: 400; font-size: 1rem; padding: 12px 14px; border: 1px solid #cfd5dc; border-radius: 10px; background: var(--branco); color: var(--txt); width: 100%; }
+  .form input[type=text]:focus, .form input[type=tel]:focus, .form input[type=email]:focus { outline: 2px solid var(--azul-c); outline-offset: 1px; border-color: transparent; }
+  .form [aria-invalid=true] { border-color: #B5452F !important; background: #FDF3F1 !important; }
+  .opc { font-weight: 400; color: var(--txt2); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; border: 0; }
+  .chips legend { font-size: 0.9rem; font-weight: 600; color: var(--azul); margin-bottom: 8px; }
+  .chips label { position: relative; }
+  .chips input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .chips span { display: inline-block; font-size: 0.88rem; padding: 8px 13px; border: 1px solid #cfd5dc; border-radius: 30px; background: var(--branco); color: var(--txt); cursor: pointer; }
+  .chips input:checked + span { background: var(--azul); border-color: var(--azul); color: #fff; }
+  .chips input:focus-visible + span { outline: 2px solid var(--azul-c); outline-offset: 2px; }
+  .chips[aria-invalid=true] span { border-color: #B5452F; }
+  .msg-erro { font-size: 0.82rem; color: #B5452F; margin: 0; }
+  .check { display: grid; grid-template-columns: 22px 1fr; gap: 8px; align-items: start; font-size: 0.85rem; color: var(--txt2); }
+  .check input { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--azul); }
+  .check small { display: block; font-size: 0.78rem; margin-top: 2px; }
+  .form .btn { justify-self: center; margin-top: 2px; }
+  .form .btn:disabled { opacity: .7; cursor: default; transform: none; }
+
+  .obrigado { max-width: 520px; margin: 22px auto 0; background: #fff; border-radius: 14px; border: 1px solid rgba(30,42,58,0.08); padding: 26px 22px; text-align: center; }
+  .obrigado:focus { outline: none; }
+  .obrigado h2 { font-size: 1.45rem; }
+  .btn-zap { display: block; background: var(--zap); color: #fff; text-decoration: none; font-weight: 700; font-size: 1.05rem; padding: 18px 20px; border-radius: 14px; margin: 18px 0 12px; box-shadow: 0 10px 24px rgba(31,157,85,0.35); }
+  .btn-zap:focus-visible { outline: 3px solid var(--azul); outline-offset: 3px; }
+  .agenda { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+  .agenda a { font-size: 0.85rem; font-weight: 600; color: var(--azul); text-decoration: none; border: 1px solid #cfd5dc; border-radius: 30px; padding: 8px 14px; background: var(--branco); }
+  .obrigado .dica { font-size: 0.88rem; color: var(--txt2); margin: 16px 0 0; }
 
   .lentes { background: #fff; }
   .tres { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 10px; }
   .lente { background: var(--areia-s); border-radius: 12px; padding: 18px 16px; }
   .lente b { display: block; font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--azul-c); margin-bottom: 6px; }
   .lente span { font-size: 0.95rem; }
-  .citacao { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.3rem; color: var(--azul); text-align: center; margin: 34px auto 0; max-width: 560px; text-wrap: balance; }
+  .triade { text-align: center; font-weight: 600; color: var(--azul); margin: 26px auto 0; max-width: 560px; }
+  .citacao { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.3rem; color: var(--azul); text-align: center; margin: 14px auto 0; max-width: 560px; text-wrap: balance; }
 
   .como .lista { list-style: none; display: grid; gap: 14px; margin: 8px 0 0; }
   .como .lista li { display: grid; grid-template-columns: 30px 1fr; gap: 12px; align-items: start; }
   .como .lista li::before { content: ''; width: 22px; height: 22px; border-radius: 50%; background: var(--areia); border: 2px solid var(--amarelo); margin-top: 3px; }
+  .nao { background: #fff; border-left: 4px solid var(--terra); border-radius: 6px; padding: 14px 16px; margin-top: 24px; }
+  .nao p { margin: 0; }
 
   .bel { background: var(--azul); }
   .bel h2 { color: #fff; }
-  .bel p { color: rgba(241,234,219,0.9); }
-  .bel .manuscrita { color: var(--amarelo); }
+  .bel p { color: rgba(241,234,219,0.92); }
+  .bel .assinatura { color: var(--amarelo); }
 
   .fim { text-align: center; }
-  .form { display: grid; gap: 14px; text-align: left; max-width: 480px; margin: 26px auto 0; background: #fff; border: 1px solid rgba(30,42,58,0.08); border-radius: 14px; padding: 24px 22px; }
-  .form label { display: grid; gap: 6px; font-size: 0.9rem; font-weight: 600; color: var(--azul); }
-  .form input[type=text], .form input[type=tel], .form textarea { font: inherit; font-weight: 400; font-size: 1rem; padding: 12px 14px; border: 1px solid #cfd5dc; border-radius: 10px; background: var(--branco); color: var(--txt); width: 100%; }
-  .form input:focus, .form textarea:focus { outline: 2px solid var(--azul-c); outline-offset: 1px; border-color: transparent; }
-  .form .opc { font-weight: 400; color: var(--txt2); }
-  .form .check { grid-template-columns: 22px 1fr; align-items: start; font-weight: 400; font-size: 0.85rem; color: var(--txt2); }
-  .form .check input { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--azul); }
-  .form .btn { border: 0; cursor: pointer; justify-self: center; margin-top: 4px; }
-  .form .btn:disabled { opacity: .7; cursor: default; transform: none; }
-  .erro { color: #B5452F; font-size: 0.9rem; margin: 0; }
-  .obrigado { max-width: 520px; margin: 26px auto 0; }
-  .obrigado:focus { outline: none; }
-  footer { background: var(--azul-m); color: rgba(233,220,199,0.7); text-align: center; padding: 36px 22px; font-size: 0.82rem; }
+  footer { background: var(--azul-m); color: rgba(233,220,199,0.75); text-align: center; padding: 36px 22px; font-size: 0.82rem; }
   footer .fmarca { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--areia); margin-bottom: 6px; }
   @media (max-width: 620px) { .tres { grid-template-columns: 1fr; } }
-  @media (max-width: 480px) { .data { grid-template-columns: 76px 1fr; } .data .dia { font-size: 1.7rem; } }
-  @media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }
+  @media (min-width: 700px) { .hero { padding-top: 64px; } .hero .foto { width: 140px; height: 140px; } }
+  @media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } html { scroll-behavior: auto; } }
 </style>
 </head>
 <body>
@@ -101,20 +136,83 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <section class="hero">
   <div class="wrap">
-    <img class="foto" src="https://mariaizabeldarosa.com.br/codigo/foto-bel.jpeg" alt="Maria Izabel da Rosa, terapeuta da infância e família">
-    <span class="kicker">Duas aulas ao vivo · gratuitas</span>
-    <h1>Você já sabe muita coisa sobre o seu filho. Falta descobrir o seu lugar.</h1>
-    <p class="grande">Duas noites para pais e mães que leram, tentaram, explicaram demais, e ainda se perguntam por que nada se sustenta em casa. Com Maria Izabel da Rosa, dez anos de consultório com crianças e famílias.</p>
-
-    <div class="datas">
-      <div class="data"><div class="dia">22<small>out · qui</small></div><div><b>Antes de ser pai ou mãe, você foi filho</b><span>Ninguém educa do zero. O que da sua história aparece quando você educa o seu filho.</span></div></div>
-      <div class="data"><div class="dia">29<small>out · qui</small></div><div><b>O lugar dos pais</b><span>Limite sem culpa, direção sem autoritarismo, e por que a criança precisa poder descansar no lugar de filho.</span></div></div>
-    </div>
-    <p class="hora">Às 20h30, ao vivo no YouTube, com transmissão também no Instagram @mariaizabel.psico. O link de cada aula chega na comunidade.</p>
-
+    <img class="foto" src="https://mariaizabeldarosa.com.br/codigo/foto-bel.jpeg" width="112" height="112" fetchpriority="high" alt="Maria Izabel da Rosa, psicopedagoga">
+    <div class="selo">Psicopedagoga · 10 anos de consultório com crianças e famílias</div>
+    <h1>Você sabe muita teoria e, na hora, fica inseguro com o seu filho?</h1>
+    <p class="seca">Duas aulas ao vivo e gratuitas · 22 e 29/10 · 20h30</p>
+    <p class="grande">Para pais e mães que explicam, negociam, explicam de novo e no fim cedem. Talvez o que falta não seja mais uma técnica.</p>
     <div class="btn-area">
-      <a class="btn" href="#inscricao" data-cta="hero">Quero me inscrever nas aulas</a>
-      <p class="sob">Gratuito. Uma inscrição rápida, e o link de cada aula chega no seu WhatsApp.</p>
+      <a class="btn" href="#form-inscricao" data-cta="hero">Quero me inscrever<span class="seta" aria-hidden="true">→</span></a>
+      <p class="sob">Gratuito. O link de cada aula chega na comunidade do WhatsApp.</p>
+    </div>
+  </div>
+</section>
+
+<section class="inscricao" id="inscricao">
+  <div class="wrap">
+    <div class="datas">
+      <div class="data"><div class="dia">22<small>out · qui</small></div><div><b>Antes de ser pai ou mãe, você foi filho</b><span>Você sai com a pergunta: o que da minha história aparece quando eu educo o meu filho?</span></div></div>
+      <div class="data"><div class="dia">29<small>out · qui</small></div><div><b>O lugar dos pais</b><span>O que acontece comigo quando o meu filho não gosta da direção que eu dou?</span></div></div>
+    </div>
+    <p class="hora">Às 20h30, ao vivo no YouTube, com transmissão também no Instagram @mariaizabel.psico.</p>
+
+    <form id="form-inscricao" class="form" novalidate>
+      <p class="titulo-form">Faça a sua inscrição</p>
+
+      <div class="campo">
+        <label for="f-nome">Seu nome</label>
+        <input id="f-nome" name="nome" type="text" autocomplete="name" required aria-describedby="e-nome">
+        <p class="msg-erro" id="e-nome" hidden></p>
+      </div>
+
+      <div class="campo">
+        <label for="f-zap">Seu WhatsApp, com DDD</label>
+        <input id="f-zap" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="(51) 99999-9999" required aria-describedby="e-zap">
+        <p class="msg-erro" id="e-zap" hidden></p>
+      </div>
+
+      <fieldset class="chips campo" id="g-idade" aria-describedby="e-idade">
+        <legend>Idade do seu filho (ou do mais novo)</legend>
+        <label><input type="radio" name="idade" value="0 a 3"><span>0 a 3 anos</span></label>
+        <label><input type="radio" name="idade" value="4 a 7"><span>4 a 7 anos</span></label>
+        <label><input type="radio" name="idade" value="8 a 12"><span>8 a 12 anos</span></label>
+        <label><input type="radio" name="idade" value="13 ou mais"><span>13 ou mais</span></label>
+        <label><input type="radio" name="idade" value="ainda nao tenho"><span>Ainda não tenho filhos</span></label>
+        <p class="msg-erro" id="e-idade" hidden style="width:100%"></p>
+      </fieldset>
+
+      <fieldset class="chips campo">
+        <legend>O que mais pesa hoje na sua casa? <span class="opc">(pode marcar mais de um)</span></legend>
+        <label><input type="checkbox" name="pesa" value="limites"><span>Colocar e sustentar limites</span></label>
+        <label><input type="checkbox" name="pesa" value="medo de frustrar"><span>Medo de frustrar</span></label>
+        <label><input type="checkbox" name="pesa" value="gritos e culpa"><span>Gritos e culpa</span></label>
+        <label><input type="checkbox" name="pesa" value="pai e mae divergem"><span>Pai e mãe pensam diferente</span></label>
+        <label><input type="checkbox" name="pesa" value="repito meus pais"><span>Repito o que vivi com meus pais</span></label>
+        <label><input type="checkbox" name="pesa" value="comportamento dificil"><span>Comportamento difícil do filho</span></label>
+      </fieldset>
+
+      <div class="campo">
+        <label for="f-email">Seu e-mail</label>
+        <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="e-email">
+        <p class="msg-erro" id="e-email" hidden></p>
+      </div>
+
+      <label class="check"><input name="consentimento" type="checkbox" required id="f-ok"> <span>Aceito receber os avisos das aulas no WhatsApp.<small>Os seus dados ficam só com a Maria Izabel e servem para as aulas e a turma de O Lugar dos Pais.</small></span></label>
+      <p class="msg-erro" id="e-ok" hidden></p>
+
+      <button class="btn" type="submit" id="enviar">Quero me inscrever<span class="seta" aria-hidden="true">→</span></button>
+      <p class="msg-erro" id="e-geral" role="alert" aria-live="polite" hidden></p>
+    </form>
+
+    <div class="obrigado" id="obrigado" hidden tabindex="-1">
+      <h2>Falta um passo.</h2>
+      <p>Sem entrar na comunidade do WhatsApp, você não recebe o link das aulas. Entra agora, leva um toque.</p>
+      <a class="btn-zap" href="https://chat.whatsapp.com/GlI8Zz9Zs2UImFh1EyneEd" rel="noopener" data-cta="obrigado">Entrar na comunidade do WhatsApp</a>
+      <div class="agenda">
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Aula%20aberta%201%20%C2%B7%20O%20Lugar%20dos%20Pais&amp;dates=20261022T233000Z/20261023T010000Z&amp;details=O%20link%20chega%20na%20comunidade%20do%20WhatsApp.&amp;location=YouTube" target="_blank" rel="noopener" data-cta="agenda1">Salvar 22/10 na agenda</a>
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Aula%20aberta%202%20%C2%B7%20O%20Lugar%20dos%20Pais&amp;dates=20261029T233000Z/20261030T010000Z&amp;details=O%20link%20chega%20na%20comunidade%20do%20WhatsApp.&amp;location=YouTube" target="_blank" rel="noopener" data-cta="agenda2">Salvar 29/10 na agenda</a>
+      </div>
+      <p class="dica">Pai e mãe podem assistir juntos. Se só um puder, as aulas valem do mesmo jeito.</p>
     </div>
   </div>
 </section>
@@ -129,6 +227,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <div class="lente"><b>Os adultos</b><span>A história de cada um, a culpa, o medo de frustrar e as reações que saem no automático.</span></div>
       <div class="lente"><b>A família</b><span>Os lugares de cada um, o casal parental e os padrões que se repetem entre gerações.</span></div>
     </div>
+    <p class="triade">Clareza para compreender. Direção para conduzir. Força para sustentar.</p>
     <p class="citacao">"Quando os pais ocupam o seu lugar, os filhos podem ocupar o deles."</p>
   </div>
 </section>
@@ -139,12 +238,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <h2>Se alguma dessas frases é sua, as aulas são para você.</h2>
     <ul class="lista">
       <li><span>Eu explico, negocio, explico de novo, e no fim cedo para evitar a crise.</span></li>
+      <li><span>Na nossa casa, quem acaba decidindo é a criança.</span></li>
+      <li><span>Eu grito, depois me culpo, e no dia seguinte acontece tudo de novo.</span></li>
       <li><span>Eu tenho medo de frustrar o meu filho.</span></li>
       <li><span>Eu e o pai, ou eu e a mãe, pensamos diferente e a criança percebe.</span></li>
       <li><span>Eu me ouço repetindo a minha mãe, ou o meu pai, e não queria.</span></li>
-      <li><span>Eu sei muita teoria e, na hora, fico inseguro.</span></li>
     </ul>
-    <p style="margin-top:22px">Pai e mãe podem assistir juntos. Se só um puder, as aulas valem do mesmo jeito.</p>
+    <div class="nao"><p><b>Para quem não é:</b> as aulas não trazem fórmula para parar a birra em três passos. São para quem quer entender o que está acontecendo na criança, em si e na família.</p></div>
   </div>
 </section>
 
@@ -152,31 +252,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="wrap">
     <span class="kicker" style="color:var(--amarelo)">Quem conduz</span>
     <h2>Maria Izabel da Rosa</h2>
-    <p class="manuscrita">Terapeuta · Comportamento Infantil</p>
-    <p>Psicopedagoga, com dez anos de consultório atendendo crianças e as famílias delas. Começou olhando para a aprendizagem, e a prática foi mostrando, caso a caso, que uma criança nunca pode ser compreendida só pelo comportamento que apresenta.</p>
+    <p class="assinatura">Terapeuta · Comportamento Infantil</p>
+    <p>Psicopedagoga, há dez anos no consultório com crianças e famílias. Trabalha com neurociência e olhar sistêmico, porque a criança não existe separada dos adultos que a conduzem e da família a que pertence.</p>
     <p>É criadora de O Lugar dos Pais, uma jornada para compreender os filhos, olhar para a própria história e ocupar com mais clareza o lugar de pai e mãe.</p>
   </div>
 </section>
 
-<section class="fim" id="inscricao">
+<section class="fim">
   <div class="wrap">
     <h2>Duas noites. Ao vivo. Gratuitas.</h2>
-    <p>22 e 29 de outubro, às 20h30. Faça a sua inscrição: leva menos de um minuto.</p>
-
-    <form id="form-inscricao" class="form" novalidate>
-      <label>Seu nome<input name="nome" type="text" autocomplete="name" required></label>
-      <label>Seu WhatsApp, com DDD<input name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="(51) 99999-9999" required></label>
-      <label>Seu e-mail<input name="email" type="email" autocomplete="email" inputmode="email" required></label>
-      <label>O que mais pesa hoje na sua casa? <span class="opc">(opcional)</span><textarea name="momento" rows="3" placeholder="Uma ou duas linhas, do seu jeito."></textarea></label>
-      <label class="check"><input name="consentimento" type="checkbox" required> Autorizo a Maria Izabel a me mandar mensagens sobre as aulas e a turma de O Lugar dos Pais. Meus dados ficam só com ela.</label>
-      <p class="erro" id="erro" role="alert" hidden></p>
-      <button class="btn" type="submit" id="enviar">Quero me inscrever</button>
-    </form>
-
-    <div class="obrigado" id="obrigado" hidden tabindex="-1">
-      <h2>Inscrição feita.</h2>
-      <p>Agora entre na comunidade "O Lugar dos Pais · com a Bel". É por lá que chegam o link de cada aula, o lembrete e o replay. Só avisos, sem conversa em grupo.</p>
-      <div class="btn-area"><a class="btn" href="https://chat.whatsapp.com/GlI8Zz9Zs2UImFh1EyneEd" target="_blank" rel="noopener" data-cta="obrigado">Entrar na comunidade</a></div>
+    <p>22 e 29 de outubro, às 20h30.</p>
+    <div class="btn-area">
+      <a class="btn" href="#form-inscricao" data-cta="fim">Quero me inscrever<span class="seta" aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
@@ -187,46 +274,94 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </footer>
 
 <script>
-  // ENDERECO DO SCRIPT DA PLANILHA: o Fabricio cola aqui a URL do app da web do Google Apps Script
-  // (Implantar > Nova implantacao > App da Web). Enquanto estiver vazio, o formulario so mostra o obrigado.
+  // Planilha (Apps Script). As respostas novas (idade e o que pesa) vao dentro da coluna "O que mais pesa",
+  // e o criativo (utm_content) junto da campanha, para nao precisar reimplantar o script.
   const ENDPOINT_PLANILHA = 'https://script.google.com/macros/s/AKfycbwVVpuvJrb1Bhy0GKBnTUsshbrA_XWu5mtIQPWE1ZhJet_0p3aPAe-SPvd64xOC8d2C/exec';
 
   window.dataLayer = window.dataLayer || [];
   const form = document.getElementById('form-inscricao');
-  const erro = document.getElementById('erro');
   const botao = document.getElementById('enviar');
+  const qs = new URLSearchParams(location.search);
+
+  // Mascara do WhatsApp enquanto digita.
+  const zapIn = document.getElementById('f-zap');
+  zapIn.addEventListener('input', function () {
+    let n = zapIn.value.replace(/\D/g, '');
+    if (n.length > 11 && n.startsWith('55')) n = n.slice(2);
+    n = n.slice(0, 11);
+    let v = n;
+    if (n.length > 2) v = '(' + n.slice(0, 2) + ') ' + n.slice(2);
+    if (n.length > 7) v = '(' + n.slice(0, 2) + ') ' + n.slice(2, n.length - 4) + '-' + n.slice(n.length - 4);
+    zapIn.value = v;
+  });
+
+  function marca(campoId, msgId, texto) {
+    const c = document.getElementById(campoId), m = document.getElementById(msgId);
+    if (texto) { c.setAttribute('aria-invalid', 'true'); m.textContent = texto; m.hidden = false; }
+    else { c.removeAttribute('aria-invalid'); m.hidden = true; }
+    return !texto;
+  }
 
   form.addEventListener('submit', async function (ev) {
     ev.preventDefault();
-    erro.hidden = true;
     const d = new FormData(form);
-    const zap = (d.get('whatsapp') || '').replace(/\D/g, '');
+    let zap = (d.get('whatsapp') || '').replace(/\D/g, '');
+    if (zap.length > 11 && zap.startsWith('55')) zap = zap.slice(2);
     const email = (d.get('email') || '').trim();
-    if (!d.get('nome').trim() || zap.length < 10 || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-      erro.textContent = 'Preencha nome, WhatsApp com DDD e um e-mail válido.'; erro.hidden = false; return;
-    }
-    if (!d.get('consentimento')) {
-      erro.textContent = 'Marque a autorização para a gente poder te avisar das aulas.'; erro.hidden = false; return;
+    const idade = d.get('idade') || '';
+    const pesa = d.getAll('pesa');
+    const certos = [
+      marca('f-nome', 'e-nome', (d.get('nome') || '').trim() ? '' : 'Escreva o seu nome.'),
+      marca('f-zap', 'e-zap', (zap.length === 10 || zap.length === 11) ? '' : 'Confira o WhatsApp: DDD e número, 10 ou 11 dígitos.'),
+      marca('g-idade', 'e-idade', idade ? '' : 'Escolha uma opção.'),
+      marca('f-email', 'e-email', /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email) ? '' : 'Confira o e-mail.'),
+      marca('f-ok', 'e-ok', d.get('consentimento') ? '' : 'Marque o aceite para a gente poder te avisar das aulas.')
+    ];
+    if (certos.includes(false)) {
+      const primeiro = form.querySelector('[aria-invalid=true]');
+      const alvo = primeiro && (primeiro.tagName === 'FIELDSET' ? primeiro.querySelector('input') : primeiro);
+      if (alvo) alvo.focus();
+      return;
     }
     botao.disabled = true; botao.textContent = 'Enviando...';
+    const resumo = 'Filhos: ' + idade + (pesa.length ? ' | Pesa: ' + pesa.join(', ') : '');
+    const campanha = [qs.get('utm_campaign'), qs.get('utm_content'), qs.get('utm_medium'), qs.get('utm_term'), qs.get('fbclid') ? 'fbclid' : '']
+      .filter(Boolean).join(' | ');
     const dados = new URLSearchParams({
       nome: d.get('nome').trim(), whatsapp: zap, email: email,
-      momento: (d.get('momento') || '').trim(), origem: new URLSearchParams(location.search).get('utm_source') || 'direto',
-      campanha: new URLSearchParams(location.search).get('utm_campaign') || ''
+      momento: resumo, origem: qs.get('utm_source') || 'direto', campanha: campanha
     });
-    try {
-      if (ENDPOINT_PLANILHA) await fetch(ENDPOINT_PLANILHA, { method: 'POST', mode: 'no-cors', body: dados });
-    } catch (e) { /* segue: o obrigado aparece mesmo se a rede falhar no meio */ }
-    // Evento que o anuncio otimiza. No GTM: acionador "evento personalizado" = inscricao_aulas,
-    // tag Meta Pixel "Lead" e tag GA4 "generate_lead".
-    window.dataLayer.push({ event: 'inscricao_aulas', pagina: 'aulas_lugar_dos_pais' });
+    const eventId = 'insc-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8);
+    let enviado = false;
+    for (let tentativa = 0; tentativa < 2 && !enviado; tentativa++) {
+      try {
+        await fetch(ENDPOINT_PLANILHA, { method: 'POST', mode: 'no-cors', body: dados });
+        enviado = true;
+      } catch (e) {
+        try { localStorage.setItem('inscricao_pendente', dados.toString()); } catch (x) {}
+      }
+    }
+    if (enviado) { try { localStorage.removeItem('inscricao_pendente'); } catch (x) {} }
+    // Evento que o anuncio otimiza (GTM: Meta Lead e GA4 generate_lead).
+    window.dataLayer.push({ event: 'inscricao_aulas', pagina: 'aulas_lugar_dos_pais', event_id: eventId, idade_filho: idade });
     form.hidden = true;
     const ok = document.getElementById('obrigado'); ok.hidden = false; ok.focus();
+    ok.scrollIntoView({ block: 'start' });
   });
 
+  // Reenvia uma inscricao que ficou pendente numa visita anterior.
+  try {
+    const pend = localStorage.getItem('inscricao_pendente');
+    if (pend) fetch(ENDPOINT_PLANILHA, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(pend) })
+      .then(function () { localStorage.removeItem('inscricao_pendente'); }).catch(function () {});
+  } catch (x) {}
+
   document.addEventListener('click', function (ev) {
-    const a = ev.target.closest('a[data-cta="obrigado"]');
-    if (a) window.dataLayer.push({ event: 'clique_comunidade', posicao: 'obrigado', pagina: 'aulas_lugar_dos_pais' });
+    const a = ev.target.closest('a[data-cta]');
+    if (!a) return;
+    const cta = a.getAttribute('data-cta');
+    if (cta === 'obrigado') window.dataLayer.push({ event: 'clique_comunidade', posicao: 'obrigado', pagina: 'aulas_lugar_dos_pais' });
+    if (cta === 'agenda1' || cta === 'agenda2') window.dataLayer.push({ event: 'salvar_agenda', aula: cta, pagina: 'aulas_lugar_dos_pais' });
   });
 </script>
 </body>
