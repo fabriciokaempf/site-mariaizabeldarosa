@@ -176,7 +176,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .etapa--ultimo::after{background:linear-gradient(var(--pai),var(--pai)) center top/48% 2px no-repeat,linear-gradient(var(--mae),var(--mae)) center bottom/48% 2px no-repeat}
   .etapa--mapa{background:var(--papel);padding-left:18px}
   .etapa--mapa .lugar--mini{position:absolute;right:16px;top:16px}
-  .etapa--mapa h3{padding-right:44px}
+  
   .etapa--fase{background:transparent;border:1px dashed var(--azul-t);padding-left:18px}
   .etapa--retorno{background:var(--azul)} .etapa--retorno time{color:var(--amarelo)}
   .etapa--retorno h3{color:var(--branco)} .etapa--retorno p{color:#D6DDE5}
@@ -202,7 +202,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .itens-b b{color:var(--azul)}
   .balao{background:#fff;border-radius:18px 18px 18px 4px;padding:18px 20px;box-shadow:0 10px 30px -18px rgba(30,42,58,.4);margin:24px 0 0;max-width:560px}
   .balao__rot{font-size:.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--azul-t);margin-bottom:8px}
-  .balao blockquote{font-size:.98rem;margin:0}
+  .balao blockquote{font-size:.98rem;margin:0;overflow-wrap:anywhere;word-break:break-word}
   .acoes{display:grid;gap:12px;margin-top:20px;justify-items:center}
   .acoes .btn{max-width:420px}
   .copiado{min-height:1.4em;font-size:.86rem;color:var(--azul);font-weight:600;margin:0}
@@ -246,7 +246,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .faq summary::-webkit-details-marker{display:none}
   .faq summary::after{content:"";position:absolute;right:6px;top:50%;width:18px;height:9px;border:2px solid var(--azul-c);border-bottom:0;border-radius:18px 18px 0 0;transform:translateY(-50%) rotate(180deg);transition:transform .2s}
   .faq details[open] summary::after{transform:translateY(-50%) rotate(0);border-color:var(--amarelo-e)}
-  .faq summary:focus-visible{outline:3px solid var(--amarelo-e);outline-offset:2px;border-radius:4px}
+  .faq summary:focus-visible{outline:3px solid var(--azul);outline-offset:2px;border-radius:4px}
   .faq details>div{padding:0 0 20px;color:var(--txt2)}
   .faq details>div p{margin:0}
   .faq .pendente{margin-left:6px}
@@ -301,7 +301,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <div>
         <span class="kicker">O Lugar dos Pais · Turma Fundadora</span>
         <h1>Pai e mãe no mesmo lugar diante do filho.</h1>
-        <p class="hero__sub">Uma mentoria em grupo para o casal fazer junto, com a Bel. Cinco encontros ao vivo para entender a criança, olhar para a história de cada um e parar de disputar quem tem razão na hora do limite.</p>
+        <p class="hero__sub">Uma mentoria em grupo para pai e mãe fazerem juntos, com a Bel. Cinco encontros ao vivo para entender a criança, olhar para a história de cada um e parar de disputar quem tem razão na hora do limite.</p>
         <div class="faixa">
           <p>Turma Fundadora · até 10 famílias · início 12/11 · quintas, 20h30, online</p>
           <p class="preco">R$ 1.497 por família (vale para os dois) · parcelamento na Hotmart</p>
@@ -401,7 +401,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <ul class="lentes" role="list">
       <li class="lente">
         <svg viewBox="0 0 56 56" aria-hidden="true" focusable="false"><circle cx="28" cy="28" r="26" fill="none" stroke="rgba(233,237,242,.25)" stroke-width="1.5"/><circle cx="28" cy="28" r="17" fill="none" stroke="rgba(233,237,242,.25)" stroke-width="1.5"/><circle cx="28" cy="28" r="7" fill="var(--amarelo)"/></svg>
-        <div><h3>A criança.</h3><p>A fase, o cérebro em formação, o temperamento e o que ela ainda está aprendendo a sustentar. Para vocês pararem de pedir dela o que ela ainda não consegue dar.</p></div>
+        <div><h3>A criança.</h3><p>A fase, o cérebro em formação, o temperamento e o que ela ainda está aprendendo a sustentar. Para vocês pararem de pedir a ela o que ela ainda não consegue dar.</p></div>
       </li>
       <li class="lente">
         <svg viewBox="0 0 56 56" aria-hidden="true" focusable="false"><circle cx="28" cy="28" r="26" fill="none" stroke="rgba(233,237,242,.25)" stroke-width="1.5"/><circle cx="28" cy="28" r="17" fill="none" stroke="var(--ameixa)" stroke-width="2.5"/><circle cx="28" cy="28" r="7" fill="none" stroke="rgba(242,178,61,.6)" stroke-width="1.5"/></svg>
@@ -551,12 +551,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="wrap">
     <span class="kicker">A pergunta que quase ninguém faz em voz alta</span>
     <h2 id="t-parceiro">"Eu quero. Mas ele (ou ela) não vai topar."</h2>
-    <p>É comum que um dos dois chegue primeiro. Quem assistiu às aulas sente o chamado; o outro ainda não viu o que você viu. Algumas coisas que ajudam:</p>
+    <p>É comum que um dos dois chegue primeiro. Você assistiu às aulas e se reconheceu; o outro ainda não viu o que você viu. Algumas coisas que ajudam:</p>
     <ul class="itens-b" role="list">
       <li><b>Não é terapia de casal.</b> Ninguém vai expor a relação de vocês. O foco é o lugar de pai e de mãe diante dos filhos.</li>
       <li><b>Ninguém vai apontar culpado.</b> A Bel não está ali para decidir quem está certo. Está ali para que os dois remem na mesma direção.</li>
       <li><b>É uma noite por semana, online.</b> Quinta, 20h30, de casa, depois que as crianças dormirem.</li>
-      <li><b>Se um não puder estar, tem a gravação.</b> Ela fica disponível até 14/01 para quem perdeu assistir e vocês conversarem depois.</li>
+      <li><b>Se um não puder estar, tem a gravação.</b> Ela fica disponível até 14/01: quem perdeu o encontro assiste depois, e vocês conversam sobre ele.</li>
       <li><b>Convide, não convença.</b> Mande a mensagem abaixo, com as suas palavras se preferir, e deixe o outro ler a página com calma.</li>
     </ul>
     <div class="balao">
@@ -564,7 +564,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <blockquote id="msg-parceiro">Oi, amor. Lembra das aulas da Bel que eu assisti? Ela abriu uma turma pequena para pai e mãe fazerem juntos, chamada O Lugar dos Pais. Não é terapia de casal, é sobre a gente se acertar no jeito de conduzir as coisas aqui em casa (banho, celular, hora de dormir). São 5 quintas à noite, online. Dá uma olhada e me diz o que acha? mariaizabeldarosa.com.br/olugardospais</blockquote>
     </div>
     <div class="acoes">
-      <button type="button" class="btn" id="btn-copiar">Copiar a mensagem para o meu parceiro</button>
+      <button type="button" class="btn" id="btn-copiar">Copiar a mensagem</button>
       <a class="btn btn--sec" id="btn-enviar-msg" href="https://wa.me/?text=" target="_blank" rel="noopener">Enviar pelo WhatsApp</a>
       <p class="copiado" id="copiado" role="status" aria-live="polite"></p>
       <p class="sob" style="margin-top:0">Vocês decidem juntos. A inscrição vale para os dois.</p>
@@ -577,7 +577,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="wrap">
     <span class="kicker">O investimento</span>
     <h2 id="t-oferta">Uma inscrição. Os dois adultos. A jornada inteira.</h2>
-    <p>O Lugar dos Pais não é vendido por pessoa. É vendido por família, porque a proposta só faz sentido com os dois. O valor vale para pai e mãe, juntos.</p>
+    <p>O Lugar dos Pais não tem inscrição por pessoa. A inscrição é por família, porque a proposta foi pensada para os dois. O valor vale para pai e mãe.</p>
     <blockquote class="destaque-bel">
       <p class="destaque-bel__t">O casal pode se separar. O lugar de pai e mãe permanece.</p>
       <p>Por isso, O Lugar dos Pais tem uma inscrição por família, que permite a participação dos dois responsáveis, mesmo que não estejam mais juntos como casal.</p>
@@ -591,9 +591,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </svg>
       <p class="oferta__para">Para a família (os dois adultos)</p>
       <p class="oferta__preco"><span class="moeda">R$</span>1.497 <span class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">por família</span></p>
-      <p class="oferta__parcela">À vista, ou em até 12x de R$ 154,82 no cartão. Isso dá R$ 748,50 por adulto, para uma jornada de cerca de dois meses.</p>
+      <p class="oferta__parcela">À vista, ou em até 12x de R$ 154,82 no cartão, já com os juros do parcelamento. No valor à vista, são R$ 748,50 por adulto, para uma jornada de cerca de dois meses.</p>
       <ul class="oferta__inclui">
-        <li>Mapa Inicial da Família, preenchido pelo casal antes do primeiro encontro</li>
+        <li>Mapa Inicial da Família, preenchido por pai e mãe antes do primeiro encontro</li>
         <li>5 encontros ao vivo com a Bel, de 12/11 a 10/12, quintas às 20h30</li>
         <li>Gravação de cada encontro, disponível durante a jornada (até 14/01)</li>
         <li>Um mês de aplicação prática, de 11/12 a 10/01</li>
@@ -601,13 +601,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <li>Turma de até 10 famílias, para a Bel conseguir olhar para cada casa</li>
       </ul>
       <a class="btn js-checkout" href="#CHECKOUT_HOTMART" data-cta="oferta">Garantir a vaga da nossa família</a>
-      <p class="oferta__garantia"><b>Garantia em duas etapas:</b> 7 dias para desistir sem explicar nada. E, se vocês participarem ao vivo do primeiro encontro e sentirem que não é para a família, ainda podem pedir o reembolso em até 30 dias da inscrição.</p>
+      <p class="oferta__garantia"><b>Garantia em duas etapas:</b> 7 dias para desistir sem explicar nada. E, se vocês participarem ao vivo do primeiro encontro (12/11) e sentirem que não é para a família, ainda podem pedir o reembolso até 12/12.</p>
       <p class="sob">Pagamento seguro pela Hotmart. Parcelamento no cartão.</p>
     </div>
   </div>
 </section>
 
-<!-- DOBRA 9 · GARANTIA EM DUAS ETAPAS: 7 dias incondicionais (Hotmart) + até 30 dias da compra para quem participou ao vivo do 1º encontro, pedido pelo WhatsApp com o motivo. Hotmart precisa estar em 30 dias. -->
+<!-- DOBRA 9 · GARANTIA EM DUAS ETAPAS -->
 <section class="dobra" aria-labelledby="t-garantia">
   <div class="wrap">
     <svg class="selo-g" viewBox="0 0 84 84" aria-hidden="true" focusable="false">
@@ -622,14 +622,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <p class="kicker" style="margin:0">Garantia em duas etapas</p>
         <h2 id="t-garantia">Venham ao primeiro encontro. Se não fizer sentido, o valor volta.</h2>
         <p><b>Nos primeiros 7 dias depois da inscrição,</b> o reembolso é incondicional: é só pedir pela própria Hotmart, sem precisar explicar o motivo.</p>
-        <p><b>Até 30 dias depois da inscrição,</b> se vocês participaram ao vivo do primeiro encontro, em 12/11, e sentiram que O Lugar dos Pais não é para a família de vocês, peçam o reembolso pelo <a class="js-whatsapp" href="https://wa.me/5555981013403?text=Ol%C3%A1%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20O%20Lugar%20dos%20Pais" data-cta="garantia-whatsapp">WhatsApp do suporte</a> e devolvemos 100% do valor.</p>
+        <p><b>Até 30 dias depois do primeiro encontro (até 12/12),</b> se vocês participaram ao vivo do encontro de 12/11 e sentiram que O Lugar dos Pais não é para a família de vocês, peçam o reembolso pelo <a class="js-whatsapp" href="https://wa.me/5555981013403?text=Ol%C3%A1%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20O%20Lugar%20dos%20Pais" data-cta="garantia-whatsapp">WhatsApp do suporte</a> e devolvemos 100% do valor.</p>
         <p>Só pedimos que vocês contem o motivo. Ele ajuda a Bel a aperfeiçoar a mentoria e a entregar algo cada vez melhor para as próximas famílias.</p>
         <p style="margin:0">A Bel prefere uma turma de famílias que querem estar ali.</p>
       </article>
     </div>
     <div class="cta">
       <a class="btn js-checkout" href="#CHECKOUT_HOTMART" data-cta="garantia">Quero a vaga com tranquilidade</a>
-      <p class="sob">7 dias incondicionais e até 30 dias para quem participou do primeiro encontro ao vivo.</p>
+      <p class="sob">7 dias incondicionais e, para quem participou ao vivo do primeiro encontro, até 12/12.</p>
     </div>
   </div>
 </section>
@@ -639,7 +639,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="wrap">
     <span class="kicker">Turma Fundadora</span>
     <h2 id="t-vagas">Dez famílias. Nem uma a mais.</h2>
-    <p>A turma é pequena por um motivo: a Bel quer olhar para cada casa. Por isso existem duas regras, e elas valem para todo mundo.</p>
+    <p>A turma é pequena por um motivo: a Bel quer olhar para cada casa. Por isso a turma segue alguns combinados, iguais para todas as famílias.</p>
     <figure class="vagas">
       <!-- Para mostrar ocupação real, adicionar class="ocupada" no li correspondente, apenas com dado verdadeiro. -->
       <ol class="vagas__lugares" aria-hidden="true">
@@ -676,15 +676,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <h2 id="t-faq">O que as famílias costumam perguntar antes de entrar.</h2>
     <div class="faq">
       <details><summary>Qual é o horário dos encontros?</summary><div><p>Quintas-feiras, às 20h30 (horário de Brasília), nos dias 12/11, 19/11, 26/11, 03/12 e 10/12. O encontro de retorno é em 14/01, no mesmo horário.</p></div></details>
-      <details><summary>É online?</summary><div><p>Sim. Todos os encontros são ao vivo e online. Vocês participam de casa, de qualquer lugar do Brasil.</p></div></details>
+      <details><summary>É online?</summary><div><p>Sim. Todos os encontros são ao vivo e online, pelo Google Meet. Vocês participam de casa, de qualquer lugar do Brasil, e o link de cada encontro chega no grupo da turma.</p></div></details>
       <details><summary>E se não der para assistir ao vivo?</summary><div><p>Cada encontro fica gravado e disponível durante a jornada, até 14/01. A gravação existe para o casal: se um de vocês não puder estar, assiste depois e vocês conversam sobre o encontro.</p></div></details>
       <details><summary>Só um de nós pode participar?</summary><div><p>Pode, e a jornada continua valendo. Mas ela foi pensada para os dois. Se o outro ainda está em dúvida, a inscrição já vale para ele (ou ela), e a gravação permite que acompanhe no próprio tempo.</p></div></details>
       <details><summary>Somos separados, mas criamos os filhos juntos. Podemos participar?</summary><div><p>Sim. O casal pode se separar, mas o lugar de pai e mãe permanece. A inscrição é por família e permite a participação dos dois responsáveis, mesmo que não estejam mais juntos como casal.</p></div></details>
-      <details><summary>Qual a idade dos filhos?</summary><div><p>A maioria das famílias tem filhos pequenos e em idade escolar. O olhar das três lentes (a criança, o adulto e o sistema familiar) serve para filhos de idades diferentes, e o Mapa Inicial da Família ajuda a Bel a conhecer a realidade da casa de vocês.</p></div></details>
-      <details><summary>Quanto custa e posso parcelar?</summary><div><p>R$ 1.497 por família, valendo para os dois adultos. O pagamento é pela Hotmart, com parcelamento no cartão.</p></div></details>
+      <details><summary>Qual a idade dos filhos?</summary><div><p>A turma foi pensada para famílias com filhos pequenos e em idade escolar. O olhar das três lentes (a criança, o adulto e o sistema familiar) serve para filhos de idades diferentes, e o Mapa Inicial da Família ajuda a Bel a conhecer a realidade da casa de vocês.</p></div></details>
+      <details><summary>Quanto custa e posso parcelar?</summary><div><p>R$ 1.497 por família, valendo para os dois adultos. O pagamento é pela Hotmart: à vista, no Pix ou no cartão, ou em até 12x de R$ 154,82 no cartão, já com os juros do parcelamento. Não há opção de boleto.</p></div></details>
       <details><summary>Já sou paciente da Bel. Posso entrar?</summary><div><p>Não. Pacientes atuais da Bel não participam da turma, para preservar a relação clínica. O cuidado continua no consultório.</p></div></details>
       <details><summary>É terapia de casal?</summary><div><p>Não. O foco é o lugar de pai e de mãe diante dos filhos. Vocês não vão discutir a relação na frente do grupo.</p></div></details>
-      <details><summary>Como funciona a garantia?</summary><div><p>Em duas etapas. Nos primeiros 7 dias depois da inscrição, o reembolso é incondicional, pedido pela própria Hotmart. Depois disso, até 30 dias da inscrição, quem participou ao vivo do primeiro encontro (12/11) e sentiu que não é para a família pode pedir o reembolso pelo WhatsApp do suporte, contando o motivo, e recebe 100% do valor.</p></div></details>
+      <details><summary>Como funciona a garantia?</summary><div><p>Em duas etapas. Nos primeiros 7 dias depois da inscrição, o reembolso é incondicional, pedido pela própria Hotmart. Depois disso, até 30 dias depois do primeiro encontro (até 12/12), quem participou ao vivo do encontro de 12/11 e sentiu que não é para a família pode pedir o reembolso pelo WhatsApp do suporte, contando o motivo, e recebe 100% do valor.</p></div></details>
       <details><summary>E se a turma não fechar?</summary><div><p>Se não chegarmos a 6 famílias até 08/11, vocês recebem o reembolso integral ou podem guardar a vaga para a próxima turma. O aviso chega até 09/11.</p></div></details>
     </div>
   </div>
@@ -740,12 +740,12 @@ const WHATSAPP_URL = 'https://wa.me/5555981013403?text=Ol%C3%A1%2C%20tenho%20uma
   var params = new URLSearchParams(window.location.search);
   var teste = params.get('teste') === 'checkout';
 
-  // Repassa utm_* e fbclid da URL da página para o checkout
+  // Repassa para o checkout todos os parâmetros da URL da página (utm_*, fbclid, src, sck), menos o teste
   function linkCheckout(){
     try {
       var destino = new URL(CHECKOUT_URL);
       params.forEach(function(v, k){
-        if (k.indexOf('utm_') === 0 || k === 'fbclid') destino.searchParams.set(k, v);
+        if (k !== 'teste') destino.searchParams.set(k, v);
       });
       return destino.toString();
     } catch (e) { return CHECKOUT_URL; }
@@ -789,9 +789,18 @@ const WHATSAPP_URL = 'https://wa.me/5555981013403?text=Ol%C3%A1%2C%20tenho%20uma
 
   botoes.forEach(function(a){
     a.addEventListener('click', function(ev){
-      if (estado() !== 'aberto') { ev.preventDefault(); return; }
-      window.dataLayer.push({event:'initiate_checkout', pagina:'olugardospais', posicao:a.getAttribute('data-cta'), value:1497, currency:'BRL'});
-      if (!a.getAttribute('href')) { ev.preventDefault(); aplicar(); window.location.href = href; }
+      if (estado() !== 'aberto') { ev.preventDefault(); aplicar(); return; }
+      if (!a.getAttribute('href')) aplicar();
+      var dados = {event:'clique_checkout', botao_origem:a.getAttribute('data-cta'), pagina:'olugardospais', value:1497, currency:'BRL'};
+      if (ev.ctrlKey || ev.metaKey || ev.shiftKey) { window.dataLayer.push(dados); return; }
+      ev.preventDefault();
+      var foi = false;
+      var seguir = function(){ if (!foi) { foi = true; window.location.href = href; } };
+      dados.eventCallback = seguir; dados.eventTimeout = 1200;
+      window.dataLayer.push(dados);
+      setTimeout(seguir, 1500);
+      return;
+      
     });
   });
 
