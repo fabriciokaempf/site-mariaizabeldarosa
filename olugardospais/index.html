@@ -67,6 +67,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .cta{text-align:center;margin-top:32px}
   .btn{display:inline-block;width:100%;max-width:420px;background:linear-gradient(180deg,#F7C25C,var(--amarelo) 60%,var(--amarelo-e));color:var(--azul);font:inherit;font-weight:700;font-size:1rem;line-height:1.35;text-align:center;text-decoration:none;padding:18px 28px;border:0;border-radius:60px;min-height:48px;box-shadow:0 12px 30px rgba(242,178,61,.35),inset 0 1px 0 rgba(255,255,255,.4);transition:transform .18s ease;cursor:pointer}
   .btn:hover{transform:translateY(-2px)}
+  .btn.fechado{background:var(--areia);color:var(--azul);box-shadow:none;cursor:default}
+  .btn.fechado:hover{transform:none}
   .btn:focus-visible{outline:3px solid var(--azul);outline-offset:3px}
   .dobra--escura .btn:focus-visible,.cta-fixo .btn:focus-visible{outline-color:var(--branco)}
   .btn--sec{background:#fff;border:2px solid var(--azul);box-shadow:none}
@@ -721,32 +723,72 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 
 <script>
-/* TODO: trocar CHECKOUT_URL pelo link real do checkout na Hotmart antes de 29/10.
-   TODO: trocar WHATSAPP_URL pelo link oficial do WhatsApp da equipe da Bel. */
-const CHECKOUT_URL = '#CHECKOUT_HOTMART';
+/* Checkout com trava de horário: antes de ABERTURA os botões ficam fechados ("Inscrições abrem 29/10"),
+   e abrem sozinhos no horário, mesmo com a página já aberta. Depois de FECHAMENTO mostram "Inscrições encerradas".
+   Para testar o checkout antes da abertura: ?teste=checkout na URL. */
+const CHECKOUT_URL = 'https://pay.hotmart.com/D108094429J';
+const ABERTURA = Date.parse('2026-10-29T21:00:00-03:00');
+const FECHAMENTO = Date.parse('2026-11-09T00:00:00-03:00');
 const WHATSAPP_URL = 'https://wa.me/5555981013403?text=Ol%C3%A1%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20O%20Lugar%20dos%20Pais';
 
 (function(){
   window.dataLayer = window.dataLayer || [];
 
+  var params = new URLSearchParams(window.location.search);
+  var teste = params.get('teste') === 'checkout';
+
   // Repassa utm_* e fbclid da URL da página para o checkout
   function linkCheckout(){
-    if (CHECKOUT_URL.charAt(0) === '#') return CHECKOUT_URL;
     try {
-      var origem = new URLSearchParams(window.location.search);
       var destino = new URL(CHECKOUT_URL);
-      origem.forEach(function(v, k){
+      params.forEach(function(v, k){
         if (k.indexOf('utm_') === 0 || k === 'fbclid') destino.searchParams.set(k, v);
       });
       return destino.toString();
     } catch (e) { return CHECKOUT_URL; }
   }
+  function estado(){
+    var agora = Date.now();
+    if (teste) return 'aberto';
+    if (agora < ABERTURA) return 'antes';
+    if (agora >= FECHAMENTO) return 'depois';
+    return 'aberto';
+  }
 
   var href = linkCheckout();
-  document.querySelectorAll('.js-checkout').forEach(function(a){
-    a.setAttribute('href', href);
-    a.addEventListener('click', function(){
+  var botoes = Array.prototype.slice.call(document.querySelectorAll('.js-checkout'));
+  botoes.forEach(function(a){ a.setAttribute('data-texto', a.textContent); });
+
+  function aplicar(){
+    var e = estado();
+    botoes.forEach(function(a){
+      var curto = a.getAttribute('data-cta') === 'barra-fixa';
+      if (e === 'aberto') {
+        a.textContent = a.getAttribute('data-texto');
+        a.setAttribute('href', href);
+        a.classList.remove('fechado');
+        a.removeAttribute('aria-disabled');
+      } else {
+        a.textContent = e === 'antes'
+          ? (curto ? 'Inscrições abrem 29/10' : 'Inscrições abrem 29/10, ao fim da aula 2')
+          : 'Inscrições encerradas';
+        a.removeAttribute('href');
+        a.classList.add('fechado');
+        a.setAttribute('aria-disabled', 'true');
+      }
+    });
+  }
+  aplicar();
+
+  // Quem estiver com a página aberta na hora da abertura vê os botões abrirem sozinhos
+  var falta = ABERTURA - Date.now();
+  if (falta > 0 && falta < 86400000) setTimeout(aplicar, falta + 500);
+
+  botoes.forEach(function(a){
+    a.addEventListener('click', function(ev){
+      if (estado() !== 'aberto') { ev.preventDefault(); return; }
       window.dataLayer.push({event:'initiate_checkout', pagina:'olugardospais', posicao:a.getAttribute('data-cta'), value:1497, currency:'BRL'});
+      if (!a.getAttribute('href')) { ev.preventDefault(); aplicar(); window.location.href = href; }
     });
   });
 
