@@ -744,7 +744,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
    e abrem sozinhos no horário, mesmo com a página já aberta. Depois de FECHAMENTO mostram "Inscrições encerradas".
    Para testar o checkout antes da abertura: ?teste=checkout na URL. */
 const CHECKOUT_URL = 'https://pay.hotmart.com/D108094429J';
-const ABERTURA = Date.parse('2026-10-29T21:00:00-03:00');
+const ABERTURA = Date.parse('2026-10-29T20:30:00-03:00');
 const FECHAMENTO = Date.parse('2026-11-09T00:00:00-03:00');
 const WHATSAPP_URL = 'https://wa.me/5555981013403?text=Ol%C3%A1%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20O%20Lugar%20dos%20Pais';
 
@@ -787,7 +787,7 @@ const WHATSAPP_URL = 'https://wa.me/5555981013403?text=Ol%C3%A1%2C%20tenho%20uma
         a.removeAttribute('aria-disabled');
       } else {
         a.textContent = e === 'antes'
-          ? (curto ? 'Inscrições abrem 29/10' : 'Inscrições abrem 29/10, ao fim da aula 2')
+          ? (curto ? 'Inscrições abrem 29/10' : 'Inscrições abrem 29/10, às 20h30')
           : 'Inscrições encerradas';
         a.removeAttribute('href');
         a.classList.add('fechado');
