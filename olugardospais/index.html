@@ -261,6 +261,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .destaque-bel{border-left:4px solid var(--amarelo);padding:6px 0 6px 18px;margin:0 0 28px}
   .destaque-bel p{color:inherit}
   .destaque-bel__t{font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;line-height:1.3;margin-bottom:10px}
+  .bonus{display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:center;max-width:620px;margin:32px auto 0;background:var(--areia-s);color:var(--txt);border-radius:20px;padding:22px;text-align:left}
+  .bonus__capa{position:relative;border-radius:14px;overflow:hidden;box-shadow:0 16px 36px rgba(0,0,0,.35);transform:rotate(-2deg)}
+  .bonus__capa img{display:block;width:100%;height:auto}
+  .bonus .kicker{color:var(--azul-c);margin-bottom:6px}
+  .bonus h3{font-family:var(--serif);font-size:clamp(1.45rem,4vw,1.9rem);line-height:1.15;color:var(--azul);margin:0 0 10px}
+  .bonus p{font-size:.95rem;line-height:1.55;margin:0 0 10px;color:var(--txt)}
+  .bonus__preco s{color:var(--ameixa);text-decoration-thickness:2px}
+  .bonus__uso{font-style:italic;color:var(--azul-c)!important;margin-bottom:0!important}
+  .oferta__bonus{background:rgba(242,178,61,.1);border-radius:10px;margin-top:8px;padding:12px 14px 12px 40px!important;border-top:0!important}
+  .oferta__bonus::before{left:12px!important;top:22px!important}
+  .oferta__bonus b{color:var(--amarelo)}
+  .oferta__bonus s{color:#C9D1DA;margin-left:6px}
+  .oferta__bonus span{display:block;font-size:.85rem;color:#D6DDE5;margin-top:4px}
+  @media (max-width:560px){.bonus{grid-template-columns:1fr;text-align:center}.bonus__capa{width:min(60%,220px);margin:0 auto}}
   .oferta__garantia{font-size:.92rem;line-height:1.5;border:1px dashed var(--amarelo);border-radius:10px;padding:10px 14px;margin:16px auto 0;max-width:460px}
   .garantia--uma{grid-template-columns:1fr!important;max-width:640px}
 
@@ -597,6 +611,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <p>Por isso, O Lugar dos Pais tem uma inscrição por família, que permite a participação dos dois responsáveis, mesmo que não estejam mais juntos como casal.</p>
       <p style="margin:0">Afinal, os filhos não precisam que seus pais continuem casados. Precisam que os adultos, dentro das possibilidades e necessidades de proteção de cada família, continuem assumindo suas responsabilidades.</p>
     </blockquote>
+    <aside class="bonus" aria-labelledby="t-bonus">
+      <div class="bonus__capa">
+        <img src="codigo-capa.jpg" width="600" height="600" alt="Capa do curso O Código, de Maria Izabel da Rosa">
+      </div>
+      <div class="bonus__texto">
+        <span class="kicker">Um presente para as famílias fundadoras</span>
+        <h3 id="t-bonus">1 ano de acesso ao Código</h3>
+        <p>Ao entrar na turma, você ganha o meu curso gravado sobre o que o comportamento da criança está dizendo. São 33 aulas, cerca de 4 horas, para assistir no seu tempo.</p>
+        <p class="bonus__preco">Ele era vendido por <s>R$ 697</s>. As vendas foram encerradas e, hoje, a única forma de ter acesso é entrando na Turma Fundadora.</p>
+        <p class="bonus__uso">Assim, você e o pai (ou a mãe) do seu filho começam a estudar antes mesmo do primeiro encontro.</p>
+      </div>
+    </aside>
     <div class="oferta">
       <svg class="lugar" viewBox="0 0 120 80" aria-hidden="true" focusable="false">
         <path d="M14 66 C14 26, 106 26, 106 66" fill="none" stroke="var(--pai)" stroke-width="3" stroke-linecap="round"/>
@@ -613,6 +639,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <li>Um mês de aplicação prática, de 11/12 a 10/01</li>
         <li>Encontro de retorno em 14/01</li>
         <li>Turma de até 10 famílias, para a Bel conseguir olhar para cada casa</li>
+        <li class="oferta__bonus"><b>Bônus: 1 ano de acesso ao Código</b> <s>R$ 697</s><span>Só o Código representa quase metade do investimento da turma.</span></li>
       </ul>
       <a class="btn js-checkout" href="#CHECKOUT_HOTMART" data-cta="oferta">Garantir a vaga da nossa família</a>
       <p class="oferta__garantia"><b>Garantia em duas etapas:</b> 7 dias para desistir sem explicar nada. E, se vocês participarem ao vivo do primeiro encontro (12/11) e sentirem que não é para a família, ainda podem pedir o reembolso até 12/12.</p>
@@ -695,6 +722,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <details><summary>Só um de nós pode participar?</summary><div><p>Pode, e a jornada continua valendo. Mas ela foi pensada para os dois. Se o outro ainda está em dúvida, a inscrição já vale para ele (ou ela), e a gravação permite que acompanhe no próprio tempo.</p></div></details>
       <details><summary>Somos separados, mas criamos os filhos juntos. Podemos participar?</summary><div><p>Sim. O casal pode se separar, mas o lugar de pai e mãe permanece. A inscrição é por família e permite a participação dos dois responsáveis, mesmo que não estejam mais juntos como casal.</p></div></details>
       <details><summary>Qual a idade dos filhos?</summary><div><p>A turma foi pensada para famílias com filhos pequenos e em idade escolar. O olhar das três lentes (a criança, o adulto e o sistema familiar) serve para filhos de idades diferentes, e o Mapa Inicial da Família ajuda a Bel a conhecer a realidade da casa de vocês.</p></div></details>
+      <details><summary>O que eu recebo ao entrar?</summary><div><p>Cinco encontros ao vivo com a Bel, pai e mãe juntos, com gravação até 14/01; o Mapa Inicial da Família; um mês de aplicação prática e o encontro de retorno em 14/01; um grupo de no máximo 10 famílias. E o bônus da Turma Fundadora: 1 ano de acesso ao Código, o curso gravado da Bel com 33 aulas, que era vendido por R$ 697 e hoje só está disponível para quem entra na turma.</p></div></details>
       <details><summary>Quanto custa e posso parcelar?</summary><div><p>R$ 1.497 por família, valendo para os dois adultos. O pagamento é pela Hotmart: à vista, no Pix ou no cartão, ou em até 12x de R$ 154,82 no cartão, já com os juros do parcelamento. Não há opção de boleto.</p></div></details>
       <details><summary>Já sou paciente da Bel. Posso entrar?</summary><div><p>Não. Pacientes atuais da Bel não participam da turma, para preservar a relação clínica. O cuidado continua no consultório.</p></div></details>
       <details><summary>É terapia de casal?</summary><div><p>Não. O foco é o lugar de pai e de mãe diante dos filhos. Vocês não vão discutir a relação na frente do grupo.</p></div></details>
@@ -719,6 +747,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <li>5 encontros ao vivo, quintas, 20h30, online</li>
       <li>Mapa Inicial da Família, aplicação prática e encontro de retorno</li>
       <li>R$ 1.497 por família, para os dois, com parcelamento</li>
+      <li><b>Bônus: 1 ano de acesso ao Código</b> (<s>R$ 697</s>), só para quem entra na Turma Fundadora</li>
     </ul>
     <div class="cta">
       <a class="btn js-checkout" href="#CHECKOUT_HOTMART" data-cta="final">Quero a nossa vaga na Turma Fundadora</a>
