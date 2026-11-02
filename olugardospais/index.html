@@ -132,6 +132,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .faixa{margin:24px 0 0;border-top:1px solid rgba(30,42,58,.12);border-bottom:1px solid rgba(30,42,58,.12);padding:14px 0}
   .faixa p{margin:0;font-size:.92rem;font-weight:600;color:var(--azul)}
   .faixa .preco{font-family:var(--serif);font-size:1.25rem;margin-top:6px}
+  .parcela{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;margin:10px 0 0}
+  .parcela__x{font-size:1.1rem;font-weight:700;color:var(--azul)}
+  .parcela__valor{font-family:var(--serif);font-size:clamp(2.6rem,11vw,3.6rem);font-weight:600;color:var(--azul);line-height:1}
+  .parcela__valor small{font-size:.45em;vertical-align:.8em;margin-right:2px}
+  .parcela__nota{flex-basis:100%;font-size:.88rem;font-weight:500;color:var(--txt2)}
   .hero .cta{text-align:left}
   @media (min-width:900px){
     .hero .wrap{max-width:1040px}
@@ -325,8 +330,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <h1>Pai e mãe no mesmo lugar diante do filho.</h1>
         <p class="hero__sub">Uma mentoria em grupo para pai e mãe fazerem juntos, com a Bel. Cinco encontros ao vivo para entender a criança, olhar para a história de cada um e parar de disputar quem tem razão na hora do limite.</p>
         <div class="faixa">
-          <p>Turma Fundadora · até 10 famílias · início 12/11 · quintas, 20h30, online</p>
-          <p class="preco">R$ 1.497 por família (vale para os dois) · parcelamento na Hotmart</p>
+          <p>Turma Fundadora · só 10 famílias · inscrições até 08/11 · início 12/11</p>
+          <div class="parcela">
+            <span class="parcela__x">12x de</span>
+            <span class="parcela__valor"><small>R$</small>154,82</span>
+            <span class="parcela__nota">por família: uma inscrição, pai e mãe juntos</span>
+          </div>
         </div>
         <div class="cta">
           <a class="btn js-checkout" href="#CHECKOUT_HOTMART" data-cta="hero">Quero a nossa vaga na Turma Fundadora</a>
@@ -485,7 +494,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
     <div class="cta">
       <a class="btn js-checkout" href="#CHECKOUT_HOTMART" data-cta="para-quem">Somos essa família. Quero a vaga.</a>
-      <p class="sob">R$ 1.497 por família, para os dois.</p>
+      <p class="sob">12x de R$ 154,82 por família, para os dois.</p>
     </div>
   </div>
 </section>
@@ -764,7 +773,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </footer>
 
 <div class="cta-fixo oculto" id="cta-fixo">
-  <small>Turma Fundadora · R$ 1.497 por família</small>
+  <small>Só 10 famílias · inscrições até 08/11</small>
   <a class="btn js-checkout" href="#CHECKOUT_HOTMART" data-cta="barra-fixa">Quero a nossa vaga</a>
 </div>
 
